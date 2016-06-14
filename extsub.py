@@ -1,4 +1,5 @@
 #!/usr/bin/python
+
 import re
 import subprocess
 from subprocess import Popen
@@ -9,20 +10,21 @@ import time
 #from datetime import datetime
 import getpass
 import dbus
+from langdict import langdict #Language Dictionary
+import glob, os
+import RPi.GPIO as GPIO
+import collections
 
+#define "language" and "video"
 if(len(sys.argv) > 1):
-	video = sys.argv[1]
+	language = sys.argv[1]
 else:
-	video = "/home/pi/caption/media/test.mp4"
+	language = "eng"
 
-if(len(sys.argv) > 2):
-	subs = sys.argv[2]
-else:
-	subs = "/home/pi/caption/media/test.srt"
+video = "/home/pi/caption/media/test.mp4"
 
 #TODO
 #Display "Press Button For Subtitles". When button is pressed, it cycles through the subtitles for one full loop (hitting the end twice)
-#Pressing the button cycles through available languages (different SRT files)
 
 #function converts timecode to milliseconds
 def tc_to_ms(s):
@@ -39,6 +41,25 @@ def chop_digits(s):
                 return s[:-3]
         else:
                 return "0"
+
+def next_language(channel):
+	global subtitles, language, next_i
+	j = 0
+        while j < len(subtitles):
+		if language == subtitles.items()[j][0]:
+			if j+1 == len(subtitles):
+				language = subtitles.items()[0][0]
+			else:
+				language = subtitles.items()[j+1][0]
+			next_i -= 1
+			break
+		else:
+			j += 1
+
+#setup button
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP) #GPIO18 = pin 12
+GPIO.add_event_detect(18, GPIO.FALLING, callback=next_language, bouncetime=200)
 
 #start omxplayer
 cmd = "omxplayer --no-osd --loop %s" %(video)
@@ -63,14 +84,17 @@ while done==0:
 			print "ERROR"
 			raise SystemExit
 
+#import SRT subtitle files into one "subtitles" dict
+subtitles = collections.OrderedDict()
+os.chdir("media")
+for subs in glob.glob("*.srt"):
+	lang = subs.split('.')[1]
+	with open(subs, 'r') as myfile:
+		subfile = myfile.read()
+	subtitle_generator = srt.parse(subfile)
+	subtitles[lang] = list(subtitle_generator)
 
-#import SRT subtitle file as object
-with open(subs, 'r') as myfile:
-	subfile = myfile.read()
-subtitle_generator = srt.parse(subfile)
-subtitles = list(subtitle_generator)
-
-#iterate through and print subtitles
+#iterate through and print subtitles	
 i = 0
 next_i = 0
 position = "0"
@@ -83,8 +107,8 @@ while duration == "0":
 
 while long(duration) > long(position):
 	#sys.stdout.write("position: " + str(position) + "\n")
-	start = tc_to_ms(str(subtitles[i].start))
-	end = tc_to_ms(str(subtitles[i].end))
+	start = tc_to_ms(str(subtitles[language][i].start))
+	end = tc_to_ms(str(subtitles[language][i].end))
 	position = chop_digits(str(dbusIfaceProp.Position()))
 
 	#sys.stdout.write("d: " + duration + " s: " + str(start) + " p: " + str(position) + " e: " + str(end) + " i: " + str(i) + "\n")
@@ -93,10 +117,10 @@ while long(duration) > long(position):
 		if i > next_i:
 			next_i += 1
 		elif i == next_i:
-			sys.stdout.write(str(subtitles[i].content) + "\n")
+			sys.stdout.write(str(subtitles[language][i].content) + "\n")
 			next_i += 1
 	elif long(position) > long(end):
-		if subtitles[i] == subtitles[-1]:
+		if subtitles[language][i] == subtitles[language][-1]:
 			i = 0
 			next_i = 0
 			#sys.stdout.write(str(datetime.now()) + "\n")
