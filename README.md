@@ -1,8 +1,16 @@
 # Raspberry Pi External Subtitles
 
-Displays subtitles on an external graphic LCD display synchronized to a video.
+When museums and galleries who exhibit video attempt to accomodate visitors who are deaf or don't speak the language, they regularly burn hard titles on top of the video image, grossly violating the original work. ([Imagine transcribing a translation directly onto a painting!](https://en.wikipedia.org/wiki/The_Treachery_of_Images))
 
-v0.3 (2016-06-14): Adds support for multiple SRT (subtitle) files. These can be changed immediately but clicking a button that is attached to a pair of GPIO pins. No interface with graphic LCD display yet.
+Inspired by the [New York City Metropolitan Opera's "Met Titles"](http://www.nytimes.com/1995/10/02/arts/reinventing-supertitles-how-the-met-did-it.html?pagewanted=all), Raspberry Pi External Subtitles is a DIY, open source project that uses off-the-shelf hardware to create an affordable, easy-to-build, and easy-to-maintain device that displays a video on a monitor and synchronized subtitles on a separate graphic LCD display.
+
+This project is still in development.
+
+![Mockup](https://github.com/jasoneppink/raspberry-pi-external-subtitles/blob/master/mockup_diagram.jpg)
+
+###Updates
+
+v0.3 (2016-06-14): Adds support for multiple SRT (subtitle) files. These can be changed immediately by clicking a button that is attached to a pair of GPIO pins. No interface with graphic LCD display yet.
 
 v0.2 (2016-06-06): omxplayer dbus time out problem identified as problem with omxplayer; this is fixed with recent updates to omxplayer (May 27 - June 1, 2016 by kennyyy24 and fabled). This update to raspberry-pi-external-subtitles consolidates dbus calls inside the Python script (eliminating the need for additional bash scripts)
 
