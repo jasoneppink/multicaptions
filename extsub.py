@@ -21,7 +21,7 @@ if(len(sys.argv) > 1):
 else:
 	language = "eng"
 
-video = "/home/pi/caption/media/test.mp4"
+video = "media/test.mp4"
 
 #TODO
 #Display "Press Button For Subtitles". When button is pressed, it cycles through the subtitles for one full loop (hitting the end twice)
@@ -58,8 +58,8 @@ def next_language(channel):
 
 #setup button
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP) #GPIO18 = pin 12
-GPIO.add_event_detect(18, GPIO.FALLING, callback=next_language, bouncetime=200)
+GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP) #GPIO21 = pin 40
+GPIO.add_event_detect(21, GPIO.FALLING, callback=next_language, bouncetime=200)
 
 #start omxplayer
 cmd = "omxplayer --no-osd --loop %s" %(video)
