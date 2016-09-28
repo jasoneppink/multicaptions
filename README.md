@@ -4,7 +4,8 @@ When museums and galleries who exhibit video attempt to accomodate visitors who 
 
 Inspired by the [New York City Metropolitan Opera's "Met Titles"](http://www.nytimes.com/1995/10/02/arts/reinventing-supertitles-how-the-met-did-it.html?pagewanted=all), Raspberry Pi External Subtitles is a DIY, open source project that uses off-the-shelf hardware to create an affordable, easy-to-build, and easy-to-maintain device that displays a video on a monitor and synchronized subtitles on a separate graphic LCD display.
 
-Raspberry Pi External Subtitles requires [omxplayer](https://github.com/popcornmix/omxplayer) and [Rasp-T6963C](https://github.com/Orabig/Rasp-T6963C).
+###Dependencies
+Raspberry Pi External Subtitles requires [omxplayer](https://github.com/popcornmix/omxplayer), [srt](https://github.com/cdown/srt), and python-dbus. Working with [Rasp-T6963C](https://github.com/Orabig/Rasp-T6963C).
 
 **This project is still in development.**
 
