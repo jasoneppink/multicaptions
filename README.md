@@ -6,6 +6,40 @@ Inspired by the [New York City Metropolitan Opera's "Met Titles"](http://www.nyt
 
 **This project is still in development.**
 
+##Setup and Installation
+
+1. Configure your Raspberry Pi
+Starting with a fresh Raspbian install, use the following command to expand the file system (#1), set the Raspberry Pi to boot to console and turn off the splash screen (#2), and enter your locale, timezone, and keyboard layout (#4). Then finish and reboot.
+
+```
+sudo raspi-config
+```
+2. Update software:
+
+```
+sudo apt-get update
+sudo apt-get dist-upgrade
+```
+
+3. Install dependencies:
+```
+sudo apt-get install omxplayer python-dbus
+sudo pip install -U srt
+```
+
+4. Clone the repository:
+
+```
+git clone https://github.com/jasoneppink/raspberry-pi-external-subtitles
+```
+
+5. Run the application:
+
+```
+cd raspberry-pi-external-subtitles
+python extsub.py
+```
+
 ###Dependencies
 Raspberry Pi External Subtitles requires [omxplayer](https://github.com/popcornmix/omxplayer), [srt](https://github.com/cdown/srt), and python-dbus. Working with [Rasp-T6963C](https://github.com/Orabig/Rasp-T6963C).
 
