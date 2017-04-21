@@ -14,6 +14,13 @@ from langdict import langdict #Language Dictionary
 import glob, os
 import RPi.GPIO as GPIO
 import collections
+import serial as s
+
+#output for LCD display - TODO: detect if ttyACM0 or ttyACM1 or something else
+ser=s.Serial('/dev/ttyACM1', .9600)
+
+#load serial connection to LCD display
+time.sleep(3)
 
 #define "language" and "video"
 if(len(sys.argv) > 1):
@@ -117,7 +124,10 @@ while long(duration) > long(position):
 		if i > next_i:
 			next_i += 1
 		elif i == next_i:
-			sys.stdout.write(str(subtitles[language][i].content) + "\n")
+			#sys.stdout.write(str(subtitles[language][i].content) + "\n")
+			ser.write(str(subtitles[language][i].content) + "\r")
+			#ser.write(str(subtitles[language][i].content) + "\n")
+			#ser.write("test " + str(i) + "\n")
 			next_i += 1
 	elif long(position) > long(end):
 		if subtitles[language][i] == subtitles[language][-1]:

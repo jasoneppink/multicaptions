@@ -8,15 +8,18 @@
 
 3
 00:00:01,270 --> 00:00:05,310
- La Rana René aquí, y esto es una caja misteriosa. 
+ La Rana René aquí, y esto es
+ una caja misteriosa. 
 
 4
 00:00:05,310 --> 00:00:08,890
- Usted ve, si alguien puede adivinar a partir de las pistas que dar lo que se 
+ Usted ve, si alguien puede adivinar
+ a partir de las pistas que dar lo que se 
 
 5
 00:00:08,890 --> 00:00:12,140
- en este cuadro, entonces se puede mantener lo que hay en la caja. 
+ en este cuadro, entonces se puede
+ mantener lo que hay en la caja. 
 
 6
 00:00:12,140 --> 00:00:13,400
@@ -32,7 +35,8 @@
 
 9
 00:00:15,810 --> 00:00:17,330
- KERMIT: Pero espera un segundo, Cookie Monster. 
+ KERMIT: Pero espera un segundo,
+ Cookie Monster. 
 
 10
 00:00:17,330 --> 00:00:17,810
@@ -44,7 +48,8 @@
 
 12
 00:00:19,830 --> 00:00:23,610
- Cookie Monster: que se preocupan por pistas sin galleta? 
+ Cookie Monster: que se preocupan
+ por pistas sin galleta? 
 
 13
 00:00:23,610 --> 00:00:25,680
@@ -52,7 +57,8 @@
 
 14
 00:00:25,680 --> 00:00:28,80
- Ninguna cookie, no hay que adivinar juego de pistas. 
+ Ninguna cookie, no hay que
+ adivinar juego de pistas. 
 
 15
 00:00:28,80 --> 00:00:29,169
@@ -60,7 +66,8 @@
 
 16
 00:00:29,170 --> 00:00:31,520
- KERMIT: Pero espera un segundo, Cookie Monster. 
+ KERMIT: Pero espera un segundo,
+ Cookie Monster. 
 
 17
 00:00:31,520 --> 00:00:31,599
@@ -72,15 +79,18 @@
 
 19
 00:00:33,980 --> 00:00:38,394
- Si adivina lo que hay en la caja, te voy a dar una galleta. 
+ Si adivina lo que hay en la caja,
+ te voy a dar una galleta. 
 
 20
 00:00:38,395 --> 00:00:41,80
- Cookie Monster: Es un caballo, es una vaca, que es un algodón 
+ Cookie Monster: Es un caballo,
+ es una vaca, que es un algodón 
 
 21
 00:00:41,80 --> 00:00:43,460
- bola, que es un palo de pogo, es una carne asada de grupa. 
+ bola, que es un palo de pogo,
+ es una carne asada de grupa. 
 
 22
 00:00:43,460 --> 00:00:44,60
@@ -100,7 +110,8 @@
 
 26
 00:00:48,170 --> 00:00:50,30
- Cookie Monster: Bueno, me vuelve loco por las galletas. 
+ Cookie Monster: Bueno, me vuelve
+ loco por las galletas. 
 
 27
 00:00:50,30 --> 00:00:51,620
@@ -108,7 +119,8 @@
 
 28
 00:00:51,620 --> 00:00:54,15
- Ahora, tal vez si usted escucha a las pistas. 
+ Ahora, tal vez si usted escucha
+ a las pistas. 
 
 29
 00:00:54,15 --> 00:00:55,80
@@ -120,7 +132,8 @@
 
 31
 00:00:56,570 --> 00:01:00,485
- KERMIT: OK, la primera pista es que es algo para comer. 
+ KERMIT: OK, la primera pista es
+ que es algo para comer. 
 
 32
 00:01:00,485 --> 00:01:00,990
@@ -140,7 +153,8 @@
 
 36
 00:01:04,709 --> 00:01:07,720
- KERMIT: La segunda pista es que es algo redondo. 
+ KERMIT: La segunda pista es
+ que es algo redondo. 
 
 37
 00:01:07,720 --> 00:01:08,490
@@ -160,7 +174,8 @@
 
 41
 00:01:11,260 --> 00:01:11,930
- Cookie Monster: Lo siento, tercera pista. 
+ Cookie Monster: Lo siento,
+ tercera pista. 
 
 42
 00:01:11,930 --> 00:01:12,750
@@ -168,7 +183,8 @@
 
 43
 00:01:12,750 --> 00:01:14,270
- Cookie Monster: Sólo pensé que podría estar fuera cookie oportunidad. 
+ Cookie Monster: Sólo pensé que podría
+ estar fuera cookie oportunidad. 
 
 44
 00:01:14,270 --> 00:01:14,820
@@ -176,11 +192,13 @@
 
 45
 00:01:14,820 --> 00:01:18,20
- El color de esta cosa es de color naranja. 
+ El color de esta cosa es de
+ color naranja. 
 
 46
 00:01:18,20 --> 00:01:22,560
- Cookie Monster: Algo para comer que es redondo y de color naranja. 
+ Cookie Monster: Algo para comer que
+ es redondo y de color naranja. 
 
 47
 00:01:22,560 --> 00:01:23,596
@@ -188,11 +206,13 @@
 
 48
 00:01:23,596 --> 00:01:24,730
- KERMIT: (gritando) No, no es una galleta! 
+ KERMIT: (gritando) No, no es
+ una galleta! 
 
 49
 00:01:24,730 --> 00:01:26,330
- Cookie Monster: Sólo pensaba una última oportunidad, ¿sabes? 
+ Cookie Monster: Sólo pensaba una
+ última oportunidad, ¿sabes? 
 
 50
 00:01:26,330 --> 00:01:27,700
@@ -212,7 +232,8 @@
 
 54
 00:01:32,500 --> 00:01:34,310
- Es algo que comer, que es redondo y de color naranja. 
+ Es algo que comer, que es redondo
+ y de color naranja. 
 
 55
 00:01:34,310 --> 00:01:34,860
@@ -224,7 +245,8 @@
 
 57
 00:01:35,970 --> 00:01:37,440
- Cookie Monster: Yo como la cuarta pista. 
+ Cookie Monster: Yo como la
+ cuarta pista. 
 
 58
 00:01:37,440 --> 00:01:38,950
@@ -232,7 +254,8 @@
 
 59
 00:01:38,950 --> 00:01:40,590
- KERMIT: (gritando) Por supuesto que es una naranja. 
+ KERMIT: (gritando) Por supuesto
+ que es una naranja. 
 
 60
 00:01:40,590 --> 00:01:41,450
@@ -280,7 +303,8 @@
 
 71
 00:01:52,9 --> 00:01:55,340
- Cookie Monster: Sabes que la vida, la vida no es todo 
+ Cookie Monster: Sabes que la vida,
+ la vida no es todo 
 
 72
 00:01:55,340 --> 00:01:56,780
@@ -288,27 +312,33 @@
 
 73
 00:01:56,780 --> 00:02:00,570
- A veces, hay que preocuparse por los amigos, en especial 
+ A veces, hay que preocuparse por
+ los amigos, en especial 
 
 74
 00:02:00,570 --> 00:02:03,699
- amigos que aman las galletas, los amigos que aman las galletas por lo 
+ amigos que aman las galletas,
+ los amigos que aman las galletas por lo 
 
 75
 00:02:03,700 --> 00:02:08,240
- mucho que juegan juegos de adivinanzas tontas, porque quizás, quizás 
+ mucho que juegan juegos de adivinanzas
+ tontas, porque quizás, quizás 
 
 76
 00:02:08,240 --> 00:02:13,682
- sólo tal vez una rana, una rana muy guapo que tiene la galleta 
+ sólo tal vez una rana, una rana
+ muy guapo que tiene la galleta 
 
 77
 00:02:13,682 --> 00:02:18,899
- dará mejor, el mejor amigo que no puede vivir sin 
+ dará mejor, el mejor amigo que
+ no puede vivir sin 
 
 78
 00:02:18,900 --> 00:02:24,160
- galletas, dan que el mejor amigo de una cookie. 
+ galletas, dan que el mejor amigo
+ de una cookie. 
 
 79
 00:02:24,160 --> 00:02:27,290
@@ -332,7 +362,8 @@
 
 84
 00:02:35,286 --> 00:02:38,145
- Discurso como que merece al menos cinco cookies. 
+ Discurso como que merece al menos
+ cinco cookies. 
 
 85
 00:02:38,145 --> 00:02:39,480
