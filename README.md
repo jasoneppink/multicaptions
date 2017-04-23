@@ -1,16 +1,16 @@
-# Raspberry Pi External Subtitles
+# External Subtitles for Video Installations (extsub)
 
-Raspberry Pi External Subtitles is an affordable, easy-to-build, and easy-to-maintain device that displays a video on a monitor with synchronized subtitles on a separate graphic LCD display. It is an open source project using off-the-shelf hardware that is inspired by the [New York City Metropolitan Opera's "Met Titles"](http://www.nytimes.com/1995/10/02/arts/reinventing-supertitles-how-the-met-did-it.html?pagewanted=all).
+External Subtitles for Video Installations (extsub) plays fullscreen HD video while simultaneously processing and displaying subtitles on a separate graphic LCD display. It is an affordable (~$150 USD per unit), easy-to-build, easy-to-maintain, open source project using completely off-the-shelf hardware. extsub is inspired by the [New York City Metropolitan Opera's "Met Titles"](http://www.nytimes.com/1995/10/02/arts/reinventing-supertitles-how-the-met-did-it.html?pagewanted=all).
 
-![Mockup](https://github.com/jasoneppink/raspberry-pi-external-subtitles/blob/master/mockup_diagram.jpg)
+![Mockup](https://github.com/jasoneppink/extsub/blob/master/mockup_diagram.jpg)
 
 ## Hardware Requirements
 * [Raspberry Pi 2 Model B or above](https://www.adafruit.com/product/3055)
 * [Arduino Mega 2560](https://www.adafruit.com/product/191)
-* [Crystalfontz CFAG24064A graphic LCD display](https://www.crystalfontz.com/products/document/3536/CFAG24064A-TTI-TZ_Datasheet_Release_2016-05-16.pdf)
+* [Crystalfontz CFAG24064A graphic LCD display](https://www.crystalfontz.com/product/cfag24064attitz-240x64-display-module-graphic)
 * cables and components
   * [5V 2.4 Amp power supply](https://www.adafruit.com/product/1995) for the Raspberry Pi
-  * [A to B USB cable](https://www.adafruit.com/product/1995) for connecting the Arduino to the Raspberry Pi
+  * [A to B USB cable](https://www.adafruit.com/product/62) for connecting the Arduino to the Raspberry Pi
   * [jumper wires](https://www.adafruit.com/product/826) for connecting the Arduino to the LCD display
   * [10K potentiometer](https://www.adafruit.com/product/562) for setting the LCD display contrast
 
