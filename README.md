@@ -46,13 +46,13 @@ External Subtitles for Video Installations (extsub) plays fullscreen HD video wh
 6. Clone the repository:
 
   ```
-  git clone https://github.com/jasoneppink/raspberry-pi-external-subtitles
+  git clone https://github.com/jasoneppink/extsub
   ```
 
 7. Run the application:
 
   ```
-  cd raspberry-pi-external-subtitles
+  cd extsub
   python extsub.py
   ```
 
@@ -61,13 +61,13 @@ External Subtitles for Video Installations (extsub) plays fullscreen HD video wh
 COMING SOON
 
 ### Updates
-v0.4 (2017-04-18): It's working! V0.4 introduces an Arduino Mega 2560, which receives the subtitles as serial data from the Raspberry Pi and uses the [U8g2 library](https://github.com/olikraus/u8g2) to print it to the LCD screen. This version only works with English subtitles.
+v0.4 (2017-04-18): It's working! v0.4 introduces an Arduino Mega 2560, which receives the subtitles as serial data from the Raspberry Pi and uses the [U8g2 library](https://github.com/olikraus/u8g2) to print to the LCD screen. extsub currently only works with English subtitles.
 
 v0.3 (2016-06-14): Adds support for multiple SRT (subtitle) files. These can be changed immediately by clicking a button that is attached to a pair of GPIO pins. No interface with graphic LCD display yet.
 
-v0.2 (2016-06-06): omxplayer dbus time out problem identified as problem with omxplayer; this is fixed with recent updates to omxplayer (May 27 - June 1, 2016 by kennyyy24 and fabled). This update to raspberry-pi-external-subtitles consolidates dbus calls inside the Python script (eliminating the need for additional bash scripts)
+v0.2 (2016-06-06): omxplayer dbus time out problem identified as problem with omxplayer; this is fixed with recent updates to omxplayer (May 27 - June 1, 2016 by kennyyy24 and fabled). This update consolidates dbus calls inside the Python script (eliminating the need for additional bash scripts)
 
 v0.1 (2016-06-01): Synchornization works, but omxplayer dbus times out after 4 hours 38 minutes. No interface with the graphic LCD display yet.
 
 ### Thanks
-Many many thanks to Moe Jangda for his work getting the Raspberry Pi to talk to the LCD display.
+Many thanks to Moe Jangda for his work getting the Raspberry Pi to talk to the LCD display.
