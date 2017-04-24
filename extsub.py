@@ -7,7 +7,6 @@ import srt
 import sys
 from pprint import pprint
 import time
-#from datetime import datetime
 import getpass
 import dbus
 from langdict import langdict #Language Dictionary
@@ -15,11 +14,14 @@ import glob, os
 import RPi.GPIO as GPIO
 import collections
 import serial as s
+import serial.tools.list_ports
 
-#output for LCD display - TODO: detect if ttyACM0 or ttyACM1 or something else
-ser=s.Serial('/dev/ttyACM1', .9600)
-
-#load serial connection to LCD display
+#set up serial connection to Arduino
+ports = list(serial.tools.list_ports.comports())
+for p in ports:
+  if "ACM" in str(p):
+    arduino_port = str(p)[:12]
+ser=s.Serial(arduino_port, .9600)
 time.sleep(3)
 
 #define "language" and "video"
@@ -113,27 +115,21 @@ while duration == "0":
 		pass
 
 while long(duration) > long(position):
-	#sys.stdout.write("position: " + str(position) + "\n")
 	start = tc_to_ms(str(subtitles[language][i].start))
 	end = tc_to_ms(str(subtitles[language][i].end))
 	position = chop_digits(str(dbusIfaceProp.Position()))
-
-	#sys.stdout.write("d: " + duration + " s: " + str(start) + " p: " + str(position) + " e: " + str(end) + " i: " + str(i) + "\n")
 
 	if long(position) > long(start) and long(position) <= long(end):
 		if i > next_i:
 			next_i += 1
 		elif i == next_i:
-			#sys.stdout.write(str(subtitles[language][i].content) + "\n")
 			ser.write(str(subtitles[language][i].content) + "\r")
 			#ser.write(str(subtitles[language][i].content) + "\n")
-			#ser.write("test " + str(i) + "\n")
 			next_i += 1
 	elif long(position) > long(end):
 		if subtitles[language][i] == subtitles[language][-1]:
 			i = 0
 			next_i = 0
-			#sys.stdout.write(str(datetime.now()) + "\n")
 		else:
 			i += 1
 	elif long(position) == 0:
