@@ -29,6 +29,8 @@ if(len(sys.argv) > 1):
 	language = sys.argv[1]
 else:
 	language = "eng"
+#send language to Arduino
+ser.write(language + "~")
 
 video = "media/test.mp4"
 

@@ -12,7 +12,7 @@ langdict = {
 	'aka': 'Akan',
 	'alb': 'Shqip', #ISO 639-2T: 'sqi'
 	'amh': 'አማርኛ',
-	#'ara': '????',
+	'ara': 'العربية',
 	'arg': 'aragonés',
 	'arm': 'Հայերեն', #ISO 639-2T: 'hye'
 	'asm': 'অসমীয়া',
