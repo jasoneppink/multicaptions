@@ -61,7 +61,7 @@ External Subtitles for Video Installations (extsub) plays fullscreen HD video wh
 COMING SOON
 
 ### Updates
-v0.5 (2017-04-26): Now accomodates Arabic, Chinese, French, and Spanish, as well as English, but currently this must be passed via commandline using the language's three-character ISO code, e.g.:
+v0.5 (2017-04-26): Now accomodates Arabic, Chinese, Hatian Creole, French, Russian, and Spanish, as well as English, but currently this must be passed via commandline using the language's three-character ISO code, e.g.:
 ```
 python extsub.py eng
 ```
