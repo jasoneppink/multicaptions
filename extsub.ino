@@ -1,45 +1,71 @@
 #include <U8g2lib.h>
+
 U8G2_T6963_240X64_F_8080 u8g2(U8G2_R0, 10, 11, 12, 13, 6, 7, 8, 9, /*enable=lcd_7 grey*/ 5, /*cs= lcd_5 */ 2, /*dc=lcd 8 c/d purple*/ 4, /*reset=pin10 green*/ 3); // Connect RD with +5V, FS0 and FS1 with GND
 
-String inputString;         // a string to hold incoming data
-boolean stringComplete = false;  // whether the string is complete
+String inputString;               //holds incoming data
+String language;                  //current language (three characters in ISO 639-2B format e.g. "eng")
+
+boolean stringComplete = false;   //whether the line of text is complete and ready to be printed to the display
+boolean newLanguage = false;      //whether a language has been detected
 
 String line1;
 String line2;
 
+//location of text on display
 int x = 5;
 int line1_y = 20;
 int line2_y = 40;
 
-
-void setup() {
+void setup(void) {
   // initialize serial:
   Serial.begin(9600);
+  
   u8g2.begin();
-  u8g2.setFont(u8g2_font_helvR10_tf);
+  u8g2.enableUTF8Print();
   u8g2.setFontDirection(0);
-  u8g2.clearBuffer();
-   
-  // clear the internal memory
-  u8g2.firstPage();
+  
+  //Default to Latin characters (English, French, Spanish, etc.)
+  u8g2.setFont(u8g2_font_helvR10_tf);
+  
+  //clear the internal memory
+  u8g2.clear();
+
+  //print "Ready..."
   u8g2.setCursor(x, line1_y);
   u8g2.print("Ready...");
-
   u8g2.sendBuffer();
   delay(1000);
   u8g2.clearBuffer();
-  u8g2.firstPage();
+  
 }
 
 
 void loop() {
-  // print the lines when everything has arrived via serialEvent()
-  if (stringComplete) {
+  //switch the font to the correct language
+  if (newLanguage) {
+    if(language=="eng" || language=="fre" || language=="hat" || language=="fre") {
       u8g2.setFont(u8g2_font_helvR10_tf);
-      u8g2.setFontDirection(0);
+    } else if(language=="ara") {
+      u8g2.setFont(u8g2_font_unifont_t_arabic);
+    } else if(language=="ben") {
+      //no Bengali font yet
+    } else if(language=="chi") {
+      u8g2.setFont(u8g2_font_unifont_t_chinese1);
+    } else if(language=="kor") {
+      //no Korean font yet
+    } else if(language=="rus") {
+      u8g2.setFont(u8g2_font_unifont_t_cyrillic);
+    } else if(language=="urd") {
+      //no Urdu font yet
+    } 
+    newLanguage = false;
+  }
+
+  //print the lines when everything has arrived via serialEvent()
+  if (stringComplete) {
       u8g2.clearBuffer();
    
-      // clear the internal memory
+      //clear the internal memory
       u8g2.firstPage();
       do {  
          u8g2.setCursor(x, line1_y);
@@ -58,19 +84,26 @@ void loop() {
 
 
 /*
-  SerialEvent occurs whenever a new data comes in the
- hardware serial RX.  This routine is run between each
- time loop() runs, so using delay inside loop can delay
- response.  Multiple bytes of data may be available.
- */
+SerialEvent occurs whenever new data comes in the
+hardware serial RX. This routine is run between each
+time loop() runs, so using delay inside loop can delay
+response. Multiple bytes of data may be available.
+*/
 void serialEvent() {
   while (Serial.available()) {
-    // get the new byte:
+    //get the new byte:
     char inChar = (char)Serial.read();
-    
-    // add it to the inputString:
-    inputString += inChar;
 
+    //detect language
+    if(inChar == '~') {
+      language = inputString;
+      inputString = "";
+      newLanguage = true;
+    } else {
+      //add character to the inputString:
+      inputString += inChar;
+    }
+    
     //split into lines
     if (inChar == '\n') {
       line1 = inputString;

@@ -61,6 +61,11 @@ External Subtitles for Video Installations (extsub) plays fullscreen HD video wh
 COMING SOON
 
 ### Updates
+v0.5 (2017-04-26): Now accomodates Arabic, Chinese, French, and Spanish, as well as English, but currently this must be passed via commandline using the language's three-character ISO code, e.g.:
+```
+python extsub.py eng
+```
+
 v0.4 (2017-04-18): It's working! v0.4 introduces an Arduino Mega 2560, which receives the subtitles as serial data from the Raspberry Pi and uses the [U8g2 library](https://github.com/olikraus/u8g2) to print to the LCD screen. extsub currently only works with English subtitles.
 
 v0.3 (2016-06-14): Adds support for multiple SRT (subtitle) files. These can be changed immediately by clicking a button that is attached to a pair of GPIO pins. No interface with graphic LCD display yet.
