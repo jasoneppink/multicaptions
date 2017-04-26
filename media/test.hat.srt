@@ -1,0 +1,388 @@
+1
+00:00:00,000 --> 00:00:00,740
+
+2
+00:00:00,740 --> 00:00:01,270
+KERMIT: Hi ho.
+
+3
+00:00:01,270 --> 00:00:05,310
+KERMIT krapo la isit la, ak
+sa a se yon bwat mistè.
+
+4
+00:00:05,310 --> 00:00:08,890
+Ou wè, si okenn moun ka devine soti
+nan endikasyon yo mwen bay ki sa ki
+
+5
+00:00:08,890 --> 00:00:12,140
+nan ti bwat sa a, lè sa a yo
+kapab kenbe sa ki nan bwat la.
+
+6
+00:00:12,140 --> 00:00:13,400
+Mons bonbon: Èske li bonbon?
+
+7
+00:00:13,400 --> 00:00:14,845
+KERMIT: Non, li se pa yon bonbon.
+
+8
+00:00:14,845 --> 00:00:15,810
+Mons bonbon: Bye bye.
+
+9
+00:00:15,810 --> 00:00:17,330
+KERMIT: Men, rete tann yon
+dezyèm, bonbon mons.
+
+10
+00:00:17,330 --> 00:00:17,810
+Mons bonbon: Ki sa ki?
+
+11
+00:00:17,810 --> 00:00:19,830
+KERMIT: Gen kèk sijesyon.
+
+12
+00:00:19,830 --> 00:00:23,610
+Mons bonbon: Ki moun ki pran swen
+sou endikasyon san yo pa bonbon?
+
+13
+00:00:23,610 --> 00:00:25,680
+M 'vle bonbon.
+
+14
+00:00:25,680 --> 00:00:28,80
+Pa gen bonbon, pa gen okenn
+devinèt jwèt nan kèk sijesyon.
+
+15
+00:00:28,80 --> 00:00:29,169
+Arrivederci, krapo.
+
+16
+00:00:29,170 --> 00:00:31,520
+KERMIT: Men, rete tann yon
+dezyèm, bonbon mons.
+
+17
+00:00:31,520 --> 00:00:31,599
+Tounen non isit la.
+
+18
+00:00:31,600 --> 00:00:33,980
+Ou wè, mwen pral di ou
+sa m 'pral fè.
+
+19
+00:00:33,980 --> 00:00:38,394
+Si ou devine ki sa ki nan ti bwat
+la, mwen pral ba ou yon bonbon.
+
+20
+00:00:38,395 --> 00:00:41,80
+Mons bonbon: Li se yon cheval,
+li nan yon bèf, li nan yon koton
+
+21
+00:00:41,80 --> 00:00:43,460
+boul, li nan yon baton pogo,
+li nan yon boukannen fès.
+
+22
+00:00:43,460 --> 00:00:44,60
+KERMIT: Non, pa gen okenn,
+pa gen okenn, pa gen okenn.
+
+23
+00:00:44,60 --> 00:00:44,870
+Mons bonbon: Li se yon Moose.
+
+24
+00:00:44,870 --> 00:00:46,250
+KERMIT: Non, pa gen okenn,
+pa gen okenn, pa gen okenn.
+
+25
+00:00:46,250 --> 00:00:48,170
+Moun sa yo se Estimation nan bwa.
+
+26
+00:00:48,170 --> 00:00:50,30
+Mons bonbon: Bon, m 'nan
+bwa sou bonbon.
+
+27
+00:00:50,30 --> 00:00:51,620
+KERMIT: Wi, men ou pa
+gen dvine dwat.
+
+28
+00:00:51,620 --> 00:00:54,15
+Koulye a, petèt si ou
+koute endikasyon yo.
+
+29
+00:00:54,15 --> 00:00:55,80
+Mons bonbon: OK, m 'tout
+zòrèy ou.
+
+30
+00:00:55,80 --> 00:00:56,570
+OK, sa ki nan premye siy?
+
+31
+00:00:56,570 --> 00:01:00,485
+KERMIT: OK, siy nan premye se
+ke li se yon bagay yo manje.
+
+32
+00:01:00,485 --> 00:01:00,990
+Mons bonbon: Li se yon bonbon.
+
+33
+00:01:00,990 --> 00:01:02,590
+KERMIT: Non, li pa yon bonbon.
+
+34
+00:01:02,590 --> 00:01:03,422
+Mons bonbon: Pa yon bonbon.
+
+35
+00:01:03,422 --> 00:01:04,709
+Ban m 'dezyèm siy.
+
+36
+00:01:04,709 --> 00:01:07,720
+KERMIT: siy nan dezyèm se
+ke li se yon bagay wonn.
+
+37
+00:01:07,720 --> 00:01:08,490
+Mons bonbon: Yon bonbon.
+
+38
+00:01:08,490 --> 00:01:09,804
+KERMIT: Non, li pa yon bonbon.
+
+39
+00:01:09,805 --> 00:01:10,780
+Mons bonbon: Pa yon bonbon.
+
+40
+00:01:10,780 --> 00:01:11,260
+KERMIT: Milimèt-mm.
+
+41
+00:01:11,260 --> 00:01:11,930
+Mons bonbon: Padon, twazyèm siy.
+
+42
+00:01:11,930 --> 00:01:12,750
+KERMIT: Twazyèm siy.
+
+43
+00:01:12,750 --> 00:01:14,270
+Mons bonbon: Jis te panse
+li ta ka bonbon nan chans.
+
+44
+00:01:14,270 --> 00:01:14,820
+KERMIT: Non, li pa.
+
+45
+00:01:14,820 --> 00:01:18,20
+koulè a ​​nan sa a bagay se zoranj.
+
+46
+00:01:18,20 --> 00:01:22,560
+Mons bonbon: Yon bagay yo
+manje ki se wonn ak zoranj.
+
+47
+00:01:22,560 --> 00:01:23,596
+Li se yon bonbon.
+
+48
+00:01:23,596 --> 00:01:24,730
+KERMIT: (tap rele ke) Non,
+li se pa yon bonbon!
+
+49
+00:01:24,730 --> 00:01:26,330
+Mons bonbon: Jis te panse yon
+dènye chans, ou konnen?
+
+50
+00:01:26,330 --> 00:01:27,700
+KERMIT: Non, li pa yon bonbon.
+
+51
+00:01:27,700 --> 00:01:30,590
+Mons bonbon: OK, um, m 'ba yo.
+
+52
+00:01:30,590 --> 00:01:30,920
+KERMIT: Ki sa ki?
+
+53
+00:01:30,920 --> 00:01:32,500
+Ki jan w ka bay moute?
+
+54
+00:01:32,500 --> 00:01:34,310
+Li nan yon bagay yo manje sa a,
+se wonn ak zoranj.
+
+55
+00:01:34,310 --> 00:01:34,860
+Se yon zoranj.
+
+56
+00:01:34,860 --> 00:01:35,970
+Li nan yon zoranj!
+
+57
+00:01:35,970 --> 00:01:37,440
+Mons bonbon: mwen tankou
+sa katriyèm siy.
+
+58
+00:01:37,440 --> 00:01:38,950
+Èske li yon zoranj?
+
+59
+00:01:38,950 --> 00:01:40,590
+KERMIT: (tap rele ke) Nan
+kou li nan yon zoranj.
+
+60
+00:01:40,590 --> 00:01:41,450
+Mwen jis di nou li te yon zoranj.
+
+61
+00:01:41,450 --> 00:01:42,550
+Mons bonbon: mwen devine dwat.
+
+62
+00:01:42,550 --> 00:01:43,170
+M 'jwenn bonbon.
+
+63
+00:01:43,170 --> 00:01:43,700
+Ban m 'bonbon.
+
+64
+00:01:43,700 --> 00:01:45,130
+KERMIT: Non, ou pa jwenn yon bonbon.
+
+65
+00:01:45,130 --> 00:01:45,560
+Mons bonbon: Poukisa?
+
+66
+00:01:45,560 --> 00:01:46,700
+KERMIT: mwen te di nou sa
+li te ye a.
+
+67
+00:01:46,700 --> 00:01:47,630
+Mwen te di nou li te yon zoranj.
+
+68
+00:01:47,630 --> 00:01:50,429
+Ou pa t 'devine li dwat.
+
+69
+00:01:50,430 --> 00:01:50,710
+Mons bonbon: krapo.
+
+70
+00:01:50,710 --> 00:01:52,9
+KERMIT: Ki sa ki?
+
+71
+00:01:52,9 --> 00:01:55,340
+Mons bonbon: Ou konnen lavi,
+lavi se pa tout
+
+72
+00:01:55,340 --> 00:01:56,780
+jwèt devinèt, krapo.
+
+73
+00:01:56,780 --> 00:02:00,570
+Pafwa, nou dwe pran swen sou
+zanmi yo, espesyalman
+
+74
+00:02:00,570 --> 00:02:03,699
+zanmi ki renmen bonbon, zanmi
+ki renmen bonbon se konsa
+
+75
+00:02:03,700 --> 00:02:08,240
+lajan yo jwe jwèt devinèt
+komik paske petèt, petèt
+
+76
+00:02:08,240 --> 00:02:13,682
+jis petèt yon krapo, yon
+krapo trè bèl ki gen bonbon
+
+77
+00:02:13,682 --> 00:02:18,899
+pral ba pi bon, pi bon zanmi
+ki pa gen okenn ka viv san
+
+78
+00:02:18,900 --> 00:02:24,160
+bonbon, bay ki pi bon zanmi
+yon bonbon.
+
+79
+00:02:24,160 --> 00:02:27,290
+Men, si amitye vle di nothing--
+
+80
+00:02:27,290 --> 00:02:28,262
+KERMIT: OK.
+
+81
+00:02:28,262 --> 00:02:30,210
+OK, OK.
+
+82
+00:02:30,210 --> 00:02:32,810
+Isit la nan bonbon ou yo.
+
+83
+00:02:32,810 --> 00:02:35,286
+Mons bonbon: Youn miserable
+bonbon?
+
+84
+00:02:35,286 --> 00:02:38,145
+Lapawòl tankou ki merite
+omwen senk bonbon.
+
+85
+00:02:38,145 --> 00:02:39,480
+KERMIT: Mwen sèlman te gen
+yon sèl bonbon.
+
+86
+00:02:39,480 --> 00:02:40,260
+Mons bonbon: OK.
+
+87
+00:02:40,260 --> 00:02:41,850
+Nan ka sa a, m 'rezoud.
+
+88
+00:02:41,850 --> 00:02:44,906
+[EATS BONBON brwiyaman]
+
