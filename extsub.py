@@ -7,6 +7,7 @@ import srt
 import sys
 from pprint import pprint
 import time
+import datetime
 import getpass
 import dbus
 from langdict import langdict #Language Dictionary
@@ -30,7 +31,7 @@ if(len(sys.argv) > 1):
 else:
 	language = "eng"
 #send language to Arduino
-ser.write(language + "~")
+ser.write(langdict[language] + language + "~")
 
 video = "media/test.mp4"
 
@@ -62,7 +63,10 @@ def next_language(channel):
 				language = subtitles.items()[0][0]
 			else:
 				language = subtitles.items()[j+1][0]
-			next_i -= 1
+			#next_i -= 1
+			ser.write(langdict[language] + language + "~")
+			#for debugging language select button, print out date/time and language code
+			sys.stdout.write(time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime()) + ": " + language + "\n")
 			break
 		else:
 			j += 1
@@ -106,6 +110,7 @@ for subs in glob.glob("*.srt"):
 	subtitles[lang] = list(subtitle_generator)
 
 #iterate through and print subtitles	
+#TODO: different languages may have different number of subtitles. Make the subtitle dependent on duration and now a sequential order (currently i)
 i = 0
 next_i = 0
 position = "0"
