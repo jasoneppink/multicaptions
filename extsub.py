@@ -31,12 +31,9 @@ if(len(sys.argv) > 1):
 else:
 	language = "eng"
 #send language to Arduino
-ser.write(langdict[language] + language + "~")
+ser.write("{" + langdict[language] + language + "}")
 
 video = "media/test.mp4"
-
-#TODO
-#Display "Press Button For Subtitles". When button is pressed, it cycles through the subtitles for one full loop (hitting the end twice)
 
 #function converts timecode to milliseconds
 def tc_to_ms(s):
@@ -64,7 +61,7 @@ def next_language(channel):
 			else:
 				language = subtitles.items()[j+1][0]
 			#next_i -= 1
-			ser.write(langdict[language] + language + "~")
+			ser.write("{" + langdict[language] + language + "}")
 			#for debugging language select button, print out date/time and language code
 			sys.stdout.write(time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime()) + ": " + language + "\n")
 			break
