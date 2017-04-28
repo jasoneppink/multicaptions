@@ -18,9 +18,9 @@ External Subtitles for Video Installations (extsub) plays fullscreen HD video wh
 
 1. Upload extsub.ino to your Arduino.
 
-2. Connect your devices as pictured in the diagram below. (COMING SOON)
+2. Connect your devices as pictured in the diagram below.
 
-3. Configure your Raspberry Pi. Starting with a fresh [Raspbian Lite](https://www.raspberrypi.org/downloads/raspbian/) install, run the following command:
+3. Starting with a fresh [Raspbian Lite](https://www.raspberrypi.org/downloads/raspbian/) install on your Raspberry Pi, run the following command:
 
   ```
   sudo raspi-config
