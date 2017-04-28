@@ -1,6 +1,6 @@
 #include <U8g2lib.h>
 
-U8G2_T6963_240X64_F_8080 u8g2(U8G2_R0, 10, 11, 12, 13, 6, 7, 8, 9, /*enable=lcd_7 grey*/ 5, /*cs= lcd_5 */ 2, /*dc=lcd 8 c/d purple*/ 4, /*reset=pin10 green*/ 3); // Connect RD with +5V, FS0 and FS1 with GND
+U8G2_T6963_240X64_F_8080 u8g2(U8G2_R0, 11, 5, 10, 4, 9, 3, 8, 2, /*enable=lcd_7*/ 12, /*cs= lcd_5 */ 13, /*dc=lcd 8 c/d */ 7, /*reset=pin10 green*/ 6); // Connect RD with +5V, FS0 and FS1 with GND
 
 String inputString;                     //holds incoming subtitle data
 String language;                        //holds incoming language data
