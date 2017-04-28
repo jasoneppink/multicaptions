@@ -2,11 +2,14 @@
 
 U8G2_T6963_240X64_F_8080 u8g2(U8G2_R0, 10, 11, 12, 13, 6, 7, 8, 9, /*enable=lcd_7 grey*/ 5, /*cs= lcd_5 */ 2, /*dc=lcd 8 c/d purple*/ 4, /*reset=pin10 green*/ 3); // Connect RD with +5V, FS0 and FS1 with GND
 
-String inputString;               //holds incoming data
-String language;                  //current language (three characters in ISO 639-2B format e.g. "eng")
+String inputString;                     //holds incoming subtitle data
+String language;                        //holds incoming language data
+String languageCode;                    //current language (three characters in ISO 639-2B format e.g. "eng")
+String displayLanguage;                 //language to display on screen
 
-boolean stringComplete = false;   //whether the line of text is complete and ready to be printed to the display
-boolean newLanguage = false;      //whether a language has been detected
+boolean stringComplete = false;         //whether the line of text is complete and ready to be printed to the display
+boolean newLanguage = false;            //whether a language has been detected
+unsigned long displayLanguagePause;     //test for whether subtitles are temporarily disabled while language name is displayed 
 
 String line1;
 String line2;
@@ -34,51 +37,66 @@ void setup(void) {
   u8g2.setCursor(x, line1_y);
   u8g2.print("Ready...");
   u8g2.sendBuffer();
-  delay(1000);
   u8g2.clearBuffer();
-  
 }
 
 
 void loop() {
-  //switch the font to the correct language
+  //switch to the correct font based on language
   if (newLanguage) {
-    if(language=="eng" || language=="fre" || language=="hat" || language=="fre") {
+    //Serial is sent as "{[display language][3-letter language code]}" e.g. {Englisheng} or {españolspa}
+    displayLanguage = language.substring(0, language.length()-3);
+    languageCode = language.substring(language.length()-3, language.length());
+    
+    if(languageCode=="eng" || languageCode=="fre" || languageCode=="hat" || languageCode=="spa") {
       u8g2.setFont(u8g2_font_helvR10_tf);
-    } else if(language=="ara") {
+    } else if(languageCode=="ara") {
       u8g2.setFont(u8g2_font_unifont_t_arabic);
-    } else if(language=="ben") {
+    } else if(languageCode=="ben") {
       //no Bengali font yet
-    } else if(language=="chi") {
-      u8g2.setFont(u8g2_font_unifont_t_chinese1);
-    } else if(language=="kor") {
+    } else if(languageCode=="chi") {
+      u8g2.setFont(u8g2_font_unifont_t_chinese2);
+    } else if(languageCode=="kor") {
       //no Korean font yet
-    } else if(language=="rus") {
+    } else if(languageCode=="rus") {
       u8g2.setFont(u8g2_font_unifont_t_cyrillic);
-    } else if(language=="urd") {
+    } else if(languageCode=="urd") {
       //no Urdu font yet
     } 
+  
+    //print the new language
+    u8g2.clearBuffer();
+    u8g2.setCursor(120-(10*(displayLanguage.length()/2)), 32);
+    u8g2.print(displayLanguage);
+    u8g2.sendBuffer();
+    displayLanguagePause = millis();
     newLanguage = false;
-  }
+}
 
-  //print the lines when everything has arrived via serialEvent()
-  if (stringComplete) {
-      u8g2.clearBuffer();
-   
-      //clear the internal memory
-      u8g2.firstPage();
-      do {  
-         u8g2.setCursor(x, line1_y);
-         u8g2.print(line1);
-         line1 = "";
-
-         u8g2.setCursor(x, line2_y);
-         u8g2.print(line2);
-         line2 = "";
-      }
-
-      while ( u8g2.nextPage() );
-      stringComplete = false;
+  //if we're not paused on a display language
+  if((millis() - displayLanguagePause) > 500) {
+    //print the lines when everything has arrived via serialEvent()
+    if (stringComplete) {
+        u8g2.clearBuffer();
+     
+        //clear the internal memory
+        u8g2.firstPage();
+        do {
+           u8g2.setCursor(x, line1_y);
+           u8g2.print(line1);
+           line1 = "";
+           u8g2.setCursor(x, line2_y);
+           u8g2.print(line2);
+           line2 = "";
+        }
+        while ( u8g2.nextPage() );
+        stringComplete = false;
+    }
+  //otherwise clear out any text that may have come in during the display language pause
+  } else {
+    line1 = "";
+    line2 = "";
+    stringComplete = false;
   }
 }
 
@@ -95,7 +113,11 @@ void serialEvent() {
     char inChar = (char)Serial.read();
 
     //detect language
-    if(inChar == '~') {
+    if (inChar == '{') {
+      //indicates beginning of new language string, so clear what came before
+      inputString == "";
+    } else if(inChar == '}') {
+      //indicates end of new language string
       language = inputString;
       inputString = "";
       newLanguage = true;
