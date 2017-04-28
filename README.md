@@ -56,9 +56,32 @@ External Subtitles for Video Installations (extsub) plays fullscreen HD video wh
   python extsub.py
   ```
 
-### Schematic
+### Wiring
 
-COMING SOON
+![Wiring](https://github.com/jasoneppink/extsub/blob/master/wiring.jpg)
+
+| LCD Display | Arduino |
+| ----------- | ------- |
+| 1           | GND     |
+| 2           | GND     |
+| 3           | +5V     |
+| 4           | POT terminal 3  |
+| 5           | 13      |
+| 6           | -       |
+| 7           | 12      |
+| 8           | 7       |
+| 9           | POT terminal 2  |
+| 10          | 6       |
+| 11          | 11      |
+| 12          | 5       |
+| 13          | 10      |
+| 14          | 4       |
+| 15          | 9       |
+| 16          | 3       |
+| 17          | 8       |
+| 18          | 2       |
+| 19          | GND     |
+| 20          | -       |
 
 ### Updates
 v0.5 (2017-04-26): Now accomodates Arabic, Chinese, French, Haitian Creole, Russian, and Spanish, as well as English, but currently this must be passed via commandline using the language's three-character ISO code, e.g.:
