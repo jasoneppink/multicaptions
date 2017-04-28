@@ -83,7 +83,12 @@ External Subtitles for Video Installations (extsub) plays fullscreen HD video wh
 | 19          | GND     |
 | 20          | -       |
 
+### Notes
+extsub currently requires that SRT files for the same video have the same number of subtitles with the same start and end times, regardless of language, with a maximum of two lines per subtitle. (e.g. The demo video has 88 subtitles.)
+
 ### Updates
+v0.6 (2017-04-28): Now has stable language switching via button. (Please note that the subtitles included with the sample are merely rough online translations that are intended to show character support only.)
+
 v0.5 (2017-04-26): Now accomodates Arabic, Chinese, French, Haitian Creole, Russian, and Spanish, as well as English, but currently this must be passed via commandline using the language's three-character ISO code, e.g.:
 ```
 python extsub.py eng
