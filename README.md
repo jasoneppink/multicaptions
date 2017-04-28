@@ -8,11 +8,13 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
 * [Raspberry Pi 2 Model B or above](https://www.adafruit.com/product/3055)
 * [Arduino Mega 2560](https://www.adafruit.com/product/191)
 * [Crystalfontz CFAG24064A graphic LCD display](https://www.crystalfontz.com/product/cfag24064attitz-240x64-display-module-graphic)
+* a monitor and HDMI cable
 * cables and components
   * [5V 2.4 Amp power supply](https://www.adafruit.com/product/1995) for the Raspberry Pi
   * [A to B USB cable](https://www.adafruit.com/product/62) for connecting the Arduino to the Raspberry Pi
   * [jumper wires](https://www.adafruit.com/product/826) for connecting the Arduino to the LCD display
   * [10K potentiometer](https://www.adafruit.com/product/562) for setting the LCD display contrast
+  * [microSD card](https://www.amazon.com/SanDisk-Ultra-Micro-Adapter-SDSQUNC-016G-GN6MA/dp/B010Q57SEE/ref=zg_bs_3015433011_7) (at least 4GB)
 
 ## Setup and Installation
 
