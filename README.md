@@ -2,7 +2,7 @@
 
 External Subtitles for Video Installations (extsub) plays fullscreen HD video while simultaneously processing and displaying subtitles on a separate graphic LCD display. It is an affordable (~$150 USD per unit), easy-to-build, easy-to-maintain, open source project using completely off-the-shelf hardware. extsub is inspired by the [New York City Metropolitan Opera's "Met Titles"](http://www.nytimes.com/1995/10/02/arts/reinventing-supertitles-how-the-met-did-it.html?pagewanted=all).
 
-![Mockup](https://github.com/jasoneppink/extsub/blob/master/mockup_diagram.jpg)
+![Mockup](https://github.com/jasoneppink/extsub/blob/master/docs/mockup_diagram.jpg)
 
 ## Hardware Requirements
 * [Raspberry Pi 2 Model B or above](https://www.adafruit.com/product/3055)
@@ -58,7 +58,7 @@ External Subtitles for Video Installations (extsub) plays fullscreen HD video wh
 
 ### Wiring
 
-![Wiring](https://github.com/jasoneppink/extsub/blob/master/wiring.jpg)
+![Wiring](https://github.com/jasoneppink/extsub/blob/master/docs/wiring.jpg)
 
 | LCD Display | Arduino |
 | ----------- | ------- |
