@@ -89,21 +89,5 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
 ### Notes
 extsub currently requires that SRT files for the same video have the same number of subtitles with the same start and end times, regardless of language, with a maximum of two lines per subtitle. (e.g. The demo video has 88 subtitles.)
 
-### Updates
-v0.6 (2017-04-28): Now has stable language switching via button. (Please note that the subtitles included with the sample are merely rough online translations that are intended to show character support only.)
-
-v0.5 (2017-04-26): Now accomodates Arabic, Chinese, French, Haitian Creole, Russian, and Spanish, as well as English, but currently this must be passed via commandline using the language's three-character ISO code, e.g.:
-```
-python extsub.py eng
-```
-
-v0.4 (2017-04-18): It's working! v0.4 introduces an Arduino Mega 2560, which receives the subtitles as serial data from the Raspberry Pi and uses the [U8g2 library](https://github.com/olikraus/u8g2) to print to the LCD screen. extsub currently only works with English subtitles.
-
-v0.3 (2016-06-14): Adds support for multiple SRT (subtitle) files. These can be changed immediately by clicking a button that is attached to a pair of GPIO pins. No interface with graphic LCD display yet.
-
-v0.2 (2016-06-06): omxplayer dbus time out problem identified as problem with omxplayer; this is fixed with recent updates to omxplayer (May 27 - June 1, 2016 by kennyyy24 and fabled). This update consolidates dbus calls inside the Python script (eliminating the need for additional bash scripts)
-
-v0.1 (2016-06-01): Synchornization works, but omxplayer dbus times out after 4 hours 38 minutes. No interface with the graphic LCD display yet.
-
 ### Thanks
 Many thanks to Moe Jangda for his work getting the Raspberry Pi to talk to the LCD display.
