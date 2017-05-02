@@ -1,0 +1,12 @@
+[extsub Config]
+
+# Default Language (as 3-character ISO 639-2B)
+default_lang = eng
+
+# Default Display State (default state of the LCD display on launch)
+# options: display_blank, display_subs, or other text which will be displayed on launch
+launch_state = display_blank
+
+# Video File Name
+# (add directory?)
+video_file_name = media.mp4
