@@ -58,7 +58,7 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
   cd extsub
   nano config.txt
   ```
-  (Press ctrl-x and y to exit and save.)
+  (Press <kbd>ctrl</kbd>+<kbd>x</kbd>, <kbd>y</kbd>, then <kbd>enter</kbd> to exit and save.)
   
 8. Test that your video and subtitles work:
 
@@ -67,7 +67,7 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
   ```
 
 ### Bootstrapping
-If everything is working, press ctrl-c to kill extsub.py, then follow these steps to run extsub at boot.
+If everything is working, press <kbd>ctrl</kbd>+<kbd>c</kbd> to kill extsub.py, then follow these steps to run extsub at boot.
 
 1. Make startup.sh executable:
 
