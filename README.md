@@ -71,7 +71,7 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
   ```
 
 ### Bootstrapping
-If everything is working, follow these steps to run extsub at boot. (Press ctrl-c first to kill extsub first.)
+If everything is working, press ctrl-c to kill extsub.py, then follow these steps to run extsub at boot.
 
 1. Make startup.sh executable:
 
