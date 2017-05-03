@@ -95,8 +95,11 @@ and add this line so extsub starts at boot (assuming user and home directory are
 ### Killing extsub
 If you have extsub setup to run on boot and need to stop it for any reason:
 
-1. Connect the Raspberry Pi to a network, reboot it, take note of the IP address, and log in via SSH.
-
+1. Connect the Raspberry Pi to a network, reboot it, take note of the IP address, and log in via SSH (assuming user is "pi"):
+  ```
+  ssh pi@[IP Address]
+  ```
+  
 2. Kill all instances of startup.sh
   ```
   sudo killall startup.sh
