@@ -51,13 +51,59 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
   ```
   git clone https://github.com/jasoneppink/extsub
   ```
-
-7. Run the application:
+  
+7. Change to the extsub directory:
 
   ```
   cd extsub
+  ```
+
+7. Update config.txt with your details
+
+  ```
+  nano config.txt
+  ```
+  
+8. Test that your video and subtitles work:
+
+  ```
   python extsub.py
   ```
+  
+If everything is working, follow these steps to run extsub at boot. (First press ctrl-c first to stop extsub.)
+
+1. Make startup.sh executable:
+
+  ```
+  chmod 755 extsub.py startup.sh
+  ```
+  
+2. Open /etc/rc.local:
+
+  ```
+  sudo nano /etc/rc.local
+  ```
+and add this line so extsub starts at boot (assuming user and home directory are "pi"):
+
+  ```
+  sudo -u pi /home/pi/extsub/startup.sh
+  ```
+
+3. Reboot! Video will begin to play automatically.
+
+  ```
+  sudo reboot
+  ```
+
+If you have extsub setup to run on boot and need to stop it for any reason:
+
+1. Connect the Raspberry Pi to a network, reboot it, take note of the IP address, and log in via SSH.
+
+2. Kill all instances of startup.sh
+  ```
+  sudo killall startup.sh
+  ```
+
 
 ### Wiring
 
@@ -90,4 +136,5 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
 extsub currently requires that SRT files for the same video have the same number of subtitles with the same start and end times, regardless of language, with a maximum of two lines per subtitle. (e.g. The demo video has 88 subtitles.)
 
 ### Thanks
-Many thanks to Moe Jangda for his work getting the Raspberry Pi to talk to the LCD display.
+* Big ups to @olikraus for their indispensible [u8g2 library](https://github.com/olikraus/u8g2), without which none of this would be possible.
+* Many thanks to Moe Jangda for his work getting the Raspberry Pi to talk to the LCD display.
