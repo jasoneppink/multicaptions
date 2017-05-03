@@ -1,12 +1,18 @@
-[extsub Config]
+[extsub config]
 
-# Default Language (as 3-character ISO 639-2B)
+# Default Language
+# as 3-character ISO 639-2B
 default_lang = eng
 
-# Default Display State (default state of the LCD display on launch)
-# options: display_blank, display_subs, or other text which will be displayed on launch
-launch_state = display_blank
+# Video Filename
+# Location of video, relative to extsub.py
+video_filename = media/test.mp4
 
-# Video File Name
-# (add directory?)
-video_file_name = media.mp4
+# Subtitle Directory
+# Location of subtitle file directory, relative to extsub.py. Don't add slashes
+subtitle_directory = media
+
+# Default Display State (default state of the LCD display on launch)
+# options: "display_blank" or "display_subs"
+# any other text will be displayed verbatim on launch (e.g. "Press Button for Subtitles")
+launch_state = display_subs

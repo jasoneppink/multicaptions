@@ -16,6 +16,18 @@ import RPi.GPIO as GPIO
 import collections
 import serial as s
 import serial.tools.list_ports
+import ConfigParser
+
+#get absolute path of this script
+abs_path = os.path.dirname(os.path.abspath(__file__)) + "/"
+
+#read from configuration file
+config = ConfigParser.ConfigParser()
+config.readfp(open(abs_path + 'config.txt', 'r'))
+default_lang = config.get('extsub config', 'default_lang')
+launch_state = config.get('extsub config', 'launch_state')
+video = abs_path + config.get('extsub config', 'video_filename')
+subtitle_directory = abs_path + config.get('extsub config', 'subtitle_directory')
 
 #set up serial connection to Arduino
 ports = list(serial.tools.list_ports.comports())
@@ -25,15 +37,14 @@ for p in ports:
 ser=s.Serial(arduino_port, .9600)
 time.sleep(3)
 
-#define "language" and "video"
+#set language, first from command line, otherwise from config.txt
 if(len(sys.argv) > 1):
 	language = sys.argv[1]
 else:
-	language = "eng"
+	language = default_lang
+
 #send language to Arduino
 ser.write("{" + langdict[language] + language + "}")
-
-video = "media/test.mp4"
 
 #function converts timecode to milliseconds
 def tc_to_ms(s):
@@ -98,7 +109,7 @@ while done==0:
 
 #import SRT subtitle files into one "subtitles" dict
 subtitles = collections.OrderedDict()
-os.chdir("media")
+os.chdir(subtitle_directory)
 for subs in glob.glob("*.srt"):
 	lang = subs.split('.')[1]
 	with open(subs, 'r') as myfile:
