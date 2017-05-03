@@ -17,8 +17,8 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
   * [10K potentiometer](https://www.adafruit.com/product/562) for setting the LCD display contrast
 
 
-## Setup and Installation
-
+## Setup
+### Installation
 1. Upload extsub.ino to your Arduino.
 
 2. Connect your devices as pictured in the diagram below.
@@ -69,13 +69,14 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
   ```
   python extsub.py
   ```
-  
-If everything is working, follow these steps to run extsub at boot. (First press ctrl-c first to stop extsub.)
+
+### Bootstrapping
+If everything is working, follow these steps to run extsub at boot. (Press ctrl-c first to kill extsub first.)
 
 1. Make startup.sh executable:
 
   ```
-  chmod 755 extsub.py startup.sh
+  chmod 755 startup.sh
   ```
   
 2. Open /etc/rc.local:
@@ -95,6 +96,7 @@ and add this line so extsub starts at boot (assuming user and home directory are
   sudo reboot
   ```
 
+### Killing extsub
 If you have extsub setup to run on boot and need to stop it for any reason:
 
 1. Connect the Raspberry Pi to a network, reboot it, take note of the IP address, and log in via SSH.
@@ -105,7 +107,7 @@ If you have extsub setup to run on boot and need to stop it for any reason:
   ```
 
 
-### Wiring
+## Wiring
 
 ![Wiring](https://github.com/jasoneppink/extsub/blob/master/docs/wiring.jpg)
 
@@ -132,9 +134,9 @@ If you have extsub setup to run on boot and need to stop it for any reason:
 | 19          | GND     |
 | 20          | -       |
 
-### Notes
+## Notes
 extsub currently requires that SRT files for the same video have the same number of subtitles with the same start and end times, regardless of language, with a maximum of two lines per subtitle. (e.g. The demo video has 88 subtitles.)
 
-### Thanks
+## Thanks
 * Big ups to @olikraus for their indispensible [u8g2 library](https://github.com/olikraus/u8g2), without which none of this would be possible.
 * Many thanks to Moe Jangda for his work getting the Raspberry Pi to talk to the LCD display.
