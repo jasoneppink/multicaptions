@@ -52,17 +52,13 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
   git clone https://github.com/jasoneppink/extsub
   ```
   
-7. Change to the extsub directory:
+7. Change to the extsub directory and update config.txt with your details:
 
   ```
   cd extsub
-  ```
-
-7. Update config.txt with your details
-
-  ```
   nano config.txt
   ```
+  (Press ctrl-x and y to exit and save.)
   
 8. Test that your video and subtitles work:
 
