@@ -17,6 +17,7 @@ import collections
 import serial as s
 import serial.tools.list_ports
 import ConfigParser
+from dashboard import update_dashboard
 
 #get absolute path of this script
 abs_path = os.path.dirname(os.path.abspath(__file__)) + "/"
@@ -28,6 +29,11 @@ default_lang = config.get('extsub config', 'default_lang')
 launch_state = config.get('extsub config', 'launch_state')
 video = abs_path + config.get('extsub config', 'video_filename')
 subtitle_directory = abs_path + config.get('extsub config', 'subtitle_directory')
+
+#create/write over .count_plays (number of playthroughs)
+f = open(abs_path + '.count_plays', 'w')
+f.write("0")
+f.close()
 
 #set up serial connection to Arduino
 ports = list(serial.tools.list_ports.comports())
@@ -145,6 +151,13 @@ while long(duration) > long(position):
 		if subtitles[language][i] == subtitles[language][-1]:
 			i = 0
 			next_i = 0
+			#update .count_plays (number of playthroughs)
+			with open(abs_path + '.count_plays', 'r') as count_video:
+				value = int(count_video.read())
+			with open(abs_path + '.count_plays', 'w') as count_video:
+				count_video.write(str(value + 1))
+			#write to /etc/motd
+			update_dashboard()
 		else:
 			i += 1
 	elif long(position) == 0:

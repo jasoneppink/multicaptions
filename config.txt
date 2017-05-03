@@ -1,5 +1,9 @@
 [extsub config]
 
+# Video Title
+# for identification upon logging in via SSH
+video_title = "Sesame Street: Kermit And Cookie Monster And The Mystery Box"
+
 # Default Language
 # as 3-character ISO 639-2B
 default_lang = eng
