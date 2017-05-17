@@ -52,17 +52,13 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
   git clone https://github.com/jasoneppink/extsub
   ```
   
-7. Change to the extsub directory:
+7. Change to the extsub directory and update config.txt with your details:
 
   ```
   cd extsub
-  ```
-
-7. Update config.txt with your details
-
-  ```
   nano config.txt
   ```
+  (Press <kbd>ctrl</kbd>+<kbd>x</kbd>, <kbd>y</kbd>, then <kbd>enter</kbd> to exit and save.)
   
 8. Test that your video and subtitles work:
 
@@ -71,7 +67,7 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
   ```
 
 ### Bootstrapping
-If everything is working, press ctrl-c to kill extsub.py, then follow these steps to run extsub at boot.
+If everything is working, press <kbd>ctrl</kbd>+<kbd>c</kbd> to kill extsub.py, then follow these steps to run extsub at boot.
 
 1. Make startup.sh executable:
 
@@ -99,8 +95,11 @@ and add this line so extsub starts at boot (assuming user and home directory are
 ### Killing extsub
 If you have extsub setup to run on boot and need to stop it for any reason:
 
-1. Connect the Raspberry Pi to a network, reboot it, take note of the IP address, and log in via SSH.
-
+1. Connect the Raspberry Pi to a network, reboot it, take note of the IP address, and log in via SSH (assuming user is "pi"):
+  ```
+  ssh pi@[IP Address]
+  ```
+  
 2. Kill all instances of startup.sh
   ```
   sudo killall startup.sh
