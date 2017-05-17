@@ -1,22 +1,23 @@
 [extsub config]
 
-# Video Title
+# VIDEO TITLE
 # for identification upon logging in via SSH
-video_title = "Sesame Street: Kermit And Cookie Monster And The Mystery Box"
+video_title = Sesame Street: Kermit And Cookie Monster And The Mystery Box
 
-# Default Language
+# DEFAULT LANGUAGE
 # as 3-character ISO 639-2B
 default_lang = eng
 
-# Video Filename
+# VIDEO FILENAME
 # Location of video, relative to extsub.py
 video_filename = media/test.mp4
 
-# Subtitle Directory
+# SUBTITLE DIRECTORY
 # Location of subtitle file directory, relative to extsub.py. Don't add slashes
 subtitle_directory = media
 
-# Default Display State (default state of the LCD display on launch)
-# options: "display_blank" or "display_subs"
+# DEFAULT DISPLAY STATE
+# default state of the LCD display on launch
+# options: "blank" or "subtitles"
 # any other text will be displayed verbatim on launch (e.g. "Press Button for Subtitles")
-launch_state = display_subs
+launch_state = Press Button for Captions

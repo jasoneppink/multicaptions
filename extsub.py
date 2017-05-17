@@ -50,7 +50,16 @@ else:
 	language = default_lang
 
 #send language to Arduino
-ser.write("{" + langdict[language] + language + "}")
+ser.write("{LANGUAGE" + langdict[language] + language + "}")
+
+#send default display state to Arduino
+ser.write("{DEFAULT" + launch_state + "}")
+
+#setup default display info
+if(launch_state == "subtitles"):
+	write_subtitles = True
+else:
+	write_subtitles = False
 
 #function converts timecode to milliseconds
 def tc_to_ms(s):
@@ -69,22 +78,27 @@ def chop_digits(s):
                 return "0"
 
 def next_language(channel):
-	global subtitles, language, next_i
+	global subtitles, language, next_i, write_subtitles
 	j = 0
         while j < len(subtitles):
 		if language == subtitles.items()[j][0]:
-			if j+1 == len(subtitles):
-				language = subtitles.items()[0][0]
+			if write_subtitles == True:
+				if j+1 == len(subtitles):
+					language = subtitles.items()[0][0]
+				else:
+					language = subtitles.items()[j+1][0]
+				ser.write("{LANGUAGE" + langdict[language] + language + "}")
+				#for debugging language select button, print out date/time and language code
+				sys.stdout.write(time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime()) + ": " + language + "\n")
+				break
 			else:
-				language = subtitles.items()[j+1][0]
-			#next_i -= 1
-			ser.write("{" + langdict[language] + language + "}")
-			#for debugging language select button, print out date/time and language code
-			sys.stdout.write(time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime()) + ": " + language + "\n")
-			break
+				ser.write("{LANGUAGE" + langdict[language] + language + "}")
+				write_subtitles = True
+				sys.stdout.write("Language the same: " + language + "\n")
+				break
 		else:
-			j += 1
 
+			j += 1
 #setup button
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP) #GPIO21 = pin 40
@@ -144,13 +158,19 @@ while long(duration) > long(position):
 		if i > next_i:
 			next_i += 1
 		elif i == next_i:
-			ser.write(str(subtitles[language][i].content) + "\r")
-			#ser.write(str(subtitles[language][i].content) + "\n")
+			#requires write_subtitles = True to account for launch_state
+			if write_subtitles == True:
+				ser.write(str(subtitles[language][i].content) + "\r")
 			next_i += 1
 	elif long(position) > long(end):
 		if subtitles[language][i] == subtitles[language][-1]:
 			i = 0
 			next_i = 0
+			if launch_state != "subtitles":
+				#return dipslay to default state
+				write_subtitles = False
+				language = default_lang
+				ser.write("{DEFAULT" + launch_state + "}")
 			#update .count_plays (number of playthroughs)
 			with open(abs_path + '.count_plays', 'r') as count_video:
 				value = int(count_video.read())

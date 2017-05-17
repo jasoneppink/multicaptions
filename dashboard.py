@@ -91,11 +91,12 @@ def get_num_plays():
 def update_dashboard():
 	with open('/tmp/motd.tmp', 'w') as dashboard_text:
 		dashboard_text.truncate()
-		dashboard_text.write('           _             _     \n')
-		dashboard_text.write('  _____  _| |_ ___ _   _| |__  \n')
-		dashboard_text.write(' / _ \\ \\/ / __/ __| | | | \'_ \\ \n')
-		dashboard_text.write('|  __/>  <| |_\\__ \\ |_| | |_) |\n')
-		dashboard_text.write(' \\___/_/\\_\\\\__|___/\\__,_|_.__/ \n')
+		#dashboard_text.write('           _             _     \n')
+		#dashboard_text.write('  _____  _| |_ ___ _   _| |__  \n')
+		#dashboard_text.write(' / _ \\ \\/ / __/ __| | | | \'_ \\ \n')
+		#dashboard_text.write('|  __/>  <| |_\\__ \\ |_| | |_) |\n')
+		#dashboard_text.write(' \\___/_/\\_\\\\__|___/\\__,_|_.__/ \n')
+		dashboard_text.write('\n')
 		dashboard_text.write('Playing: ' + video_title + '\n')
     		dashboard_text.write('Launched: ' + get_process_time("start") + '\n')
 		dashboard_text.write('Playing for: ' + get_process_time("duration") + '\n')
