@@ -3,13 +3,18 @@
 U8G2_T6963_240X64_F_8080 u8g2(U8G2_R0, 11, 5, 10, 4, 9, 3, 8, 2, /*enable=lcd_7*/ 12, /*cs= lcd_5 */ 13, /*dc=lcd 8 c/d */ 7, /*reset=pin10 green*/ 6); // Connect RD with +5V, FS0 and FS1 with GND
 
 String inputString;                     //holds incoming subtitle data
+boolean stringComplete = false;         //whether the line of text is complete and ready to be printed to the display
+
 String language;                        //holds incoming language data
 String languageCode;                    //current language (three characters in ISO 639-2B format e.g. "eng")
 String displayLanguage;                 //language to display on screen
-
-boolean stringComplete = false;         //whether the line of text is complete and ready to be printed to the display
 boolean newLanguage = false;            //whether a language has been detected
-unsigned long displayLanguagePause;     //test for whether subtitles are temporarily disabled while language name is displayed 
+
+String launchState = "blank";           //is display default blank ("blank"), shows subtitles ("subtitles"), or shows instructions (custom)
+String displayLaunchState;              //default text to display on screen
+boolean newLaunchState = false;         //whether instructions have been detected to return to launch state
+
+unsigned long displayPause;             //test for whether subtitles are temporarily disabled while language name is displayed 
 
 String line1;
 String line2;
@@ -44,8 +49,8 @@ void setup(void) {
 void loop() {
   //switch to the correct font based on language
   if (newLanguage) {
-    //Serial is sent as "{[display language][3-letter language code]}" e.g. {Englisheng} or {españolspa}
-    displayLanguage = language.substring(0, language.length()-3);
+    //Serial is sent as "{LANGUAGE[display language][3-letter language code]}" e.g. {LANGUAGEEnglisheng} or {LANGUAGEespañolspa}
+    displayLanguage = language.substring(8, language.length()-3);
     languageCode = language.substring(language.length()-3, language.length());
     
     if(languageCode=="eng" || languageCode=="fre" || languageCode=="hat" || languageCode=="spa") {
@@ -65,16 +70,25 @@ void loop() {
     } 
   
     //print the new language
-    u8g2.clearBuffer();
-    u8g2.setCursor(120-(10*(displayLanguage.length()/2)), 32);
-    u8g2.print(displayLanguage);
-    u8g2.sendBuffer();
-    displayLanguagePause = millis();
+    printCenteredText(displayLanguage);
+    displayPause = millis();
     newLanguage = false;
-}
+  }
+
+  if (newLaunchState) {
+    //Serial is sent as "{DEFAULT[display instructions]}" e.g. {DEFAULTblank} or {DEFAULTsubtitles}
+    displayLaunchState = launchState.substring(7, launchState.length());
+   
+    if (displayLaunchState == "blank") {
+      u8g2.clear();
+    } else if (displayLaunchState != "subtitles") {
+      printCenteredText(displayLaunchState);
+    }
+    newLaunchState = false;
+  }
 
   //if we're not paused on a display language
-  if((millis() - displayLanguagePause) > 500) {
+  if((millis() - displayPause) > 500) {
     //print the lines when everything has arrived via serialEvent()
     if (stringComplete) {
         u8g2.clearBuffer();
@@ -100,6 +114,15 @@ void loop() {
   }
 }
 
+void printCenteredText(String text) {
+    u8g2.clearBuffer();
+    char textChar[text.length()+1];
+    text.toCharArray(textChar, text.length()+1);
+    int textWidth = u8g2.getUTF8Width(textChar);
+    u8g2.setCursor((240-textWidth)/2, 36);
+    u8g2.print(text);
+    u8g2.sendBuffer(); 
+}
 
 /*
 SerialEvent occurs whenever new data comes in the
@@ -114,13 +137,19 @@ void serialEvent() {
 
     //detect language
     if (inChar == '{') {
-      //indicates beginning of new language string, so clear what came before
+      //indicates beginning of new instruction string, so clear what came before
       inputString == "";
     } else if(inChar == '}') {
-      //indicates end of new language string
-      language = inputString;
+      //indicates end of new instruction string
+      if (inputString.substring(0,8) == "LANGUAGE") {
+        newLanguage = true;
+        language = inputString;
+      } else if(inputString.substring(0,7) == "DEFAULT") {
+        newLaunchState = true;
+        launchState = inputString;
+      }
+      //clear string
       inputString = "";
-      newLanguage = true;
     } else {
       //add character to the inputString:
       inputString += inChar;
