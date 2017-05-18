@@ -18,6 +18,7 @@ import serial as s
 import serial.tools.list_ports
 import ConfigParser
 from dashboard import update_dashboard
+import pickle
 
 #get absolute path of this script
 abs_path = os.path.dirname(os.path.abspath(__file__)) + "/"
@@ -29,6 +30,11 @@ default_lang = config.get('extsub config', 'default_lang')
 launch_state = config.get('extsub config', 'launch_state')
 video = abs_path + config.get('extsub config', 'video_filename')
 subtitle_directory = abs_path + config.get('extsub config', 'subtitle_directory')
+
+#initiate assorted variables for tracking subtitle duration
+subtitle_duration = config.get('extsub config', 'subtitle_duration')
+played_through_once = False
+sub_start_position = ""
 
 #create/write over .count_plays (number of playthroughs)
 f = open(abs_path + '.count_plays', 'w')
@@ -78,23 +84,30 @@ def chop_digits(s):
                 return "0"
 
 def next_language(channel):
-	global subtitles, language, next_i, write_subtitles
+	global subtitles, language, next_i, write_subtitles, position, sub_start_position, subtitle_duration, played_through_once
+	if(subtitle_duration == "2"):
+		sub_start_position = position
+		played_through_once = False
 	j = 0
         while j < len(subtitles):
 		if language == subtitles.items()[j][0]:
 			if write_subtitles == True:
 				if j+1 == len(subtitles):
 					language = subtitles.items()[0][0]
+					#revert to default
+					if(launch_state != "subtitles"):
+						ser.write("{DEFAULT" + launch_state + "}")
+						write_subtitles = False
 				else:
 					language = subtitles.items()[j+1][0]
-				ser.write("{LANGUAGE" + langdict[language] + language + "}")
+					ser.write("{LANGUAGE" + langdict[language] + language + "}")
 				#for debugging language select button, print out date/time and language code
 				sys.stdout.write(time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime()) + ": " + language + "\n")
 				break
 			else:
+				#keep language the same after first button press
 				ser.write("{LANGUAGE" + langdict[language] + language + "}")
 				write_subtitles = True
-				sys.stdout.write("Language the same: " + language + "\n")
 				break
 		else:
 
@@ -130,6 +143,17 @@ while done==0:
 #import SRT subtitle files into one "subtitles" dict
 subtitles = collections.OrderedDict()
 os.chdir(subtitle_directory)
+
+#first add default language
+for subs in glob.glob("*.srt"):
+        lang = subs.split('.')[1]
+	if(lang == default_lang):
+	        with open(subs, 'r') as myfile:
+	                subfile = myfile.read()
+	        subtitle_generator = srt.parse(subfile)
+	        subtitles[lang] = list(subtitle_generator)
+
+#then add other languages
 for subs in glob.glob("*.srt"):
 	lang = subs.split('.')[1]
 	with open(subs, 'r') as myfile:
@@ -138,7 +162,6 @@ for subs in glob.glob("*.srt"):
 	subtitles[lang] = list(subtitle_generator)
 
 #iterate through and print subtitles	
-#TODO: different languages may have different number of subtitles. Make the subtitle dependent on duration and now a sequential order (currently i)
 i = 0
 next_i = 0
 position = "0"
@@ -154,6 +177,12 @@ while long(duration) > long(position):
 	end = tc_to_ms(str(subtitles[language][i].end))
 	position = chop_digits(str(dbusIfaceProp.Position()))
 
+	#return to default if subtitle_duration 2 cases are met
+	if subtitle_duration == "2" and write_subtitles == True and played_through_once == True:
+		if long(position) > long(sub_start_position):
+			write_subtitles = False
+			ser.write("{DEFAULT" + launch_state + "}")
+
 	if long(position) > long(start) and long(position) <= long(end):
 		if i > next_i:
 			next_i += 1
@@ -166,16 +195,23 @@ while long(duration) > long(position):
 		if subtitles[language][i] == subtitles[language][-1]:
 			i = 0
 			next_i = 0
-			if launch_state != "subtitles":
-				#return dipslay to default state
-				write_subtitles = False
-				language = default_lang
-				ser.write("{DEFAULT" + launch_state + "}")
+			if launch_state != "subtitles" and write_subtitles == True:
+				if(subtitle_duration == "1" or (subtitle_duration == "3" and played_through_once == True)):
+					#return dipslay to default state
+					write_subtitles = False
+					played_through_once = False
+					language = default_lang
+					ser.write("{DEFAULT" + launch_state + "}")
+				elif(subtitle_duration == "3" and played_through_once == False):
+					played_through_once = True
+				elif(subtitle_duration == "2"):
+					played_through_once = True
 			#update .count_plays (number of playthroughs)
 			with open(abs_path + '.count_plays', 'r') as count_video:
 				value = int(count_video.read())
 			with open(abs_path + '.count_plays', 'w') as count_video:
 				count_video.write(str(value + 1))
+
 			#write to /etc/motd
 			update_dashboard()
 		else:

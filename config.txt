@@ -18,6 +18,12 @@ subtitle_directory = media
 
 # DEFAULT DISPLAY STATE
 # default state of the LCD display on launch
-# options: "blank" or "subtitles"
-# any other text will be displayed verbatim on launch (e.g. "Press Button for Subtitles")
+# options: "blank" or "subtitles", any other text will be displayed verbatim
+# on launch (e.g. "Press Button for Subtitles")
 launch_state = Press Button for Captions
+
+# SUBTITLE DURATION BEFORE RETURN TO DEFAULT
+# If the default state is "blank" or custom text, how long do the subtitles
+# display before returning to default state?
+# options: 1: to the end, 2: once around, 3: once around to the end
+subtitle_duration = 1
