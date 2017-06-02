@@ -115,12 +115,12 @@ If you have extsub setup to run on boot and need to stop it for any reason:
 | 1           | GND     |
 | 2           | GND     |
 | 3           | +5V     |
-| 4           | POT terminal 3  |
+| 4           | POT terminal 2  |
 | 5           | 13      |
 | 6           | -       |
 | 7           | 12      |
 | 8           | 7       |
-| 9           | POT terminal 2  |
+| 9           | POT terminal 1  |
 | 10          | 6       |
 | 11          | 11      |
 | 12          | 5       |
