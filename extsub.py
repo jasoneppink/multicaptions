@@ -191,7 +191,6 @@ while long(duration) > long(position):
 		elif i == next_i:
 			#requires write_subtitles = True to account for launch_state
 			if write_subtitles == True:
-				#ser.write(str(subtitles[language][i].content) + "\r")
 				ser.write(subtitles[language][i].content.encode("utf-8") + "\r")
 			next_i += 1
 	elif long(position) > long(end):
