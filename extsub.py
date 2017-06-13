@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import re
 import subprocess
@@ -19,6 +20,7 @@ import serial.tools.list_ports
 import ConfigParser
 from dashboard import update_dashboard
 import pickle
+import io
 
 #get absolute path of this script
 abs_path = os.path.dirname(os.path.abspath(__file__)) + "/"
@@ -148,7 +150,7 @@ os.chdir(subtitle_directory)
 for subs in glob.glob("*.srt"):
         lang = subs.split('.')[1]
 	if(lang == default_lang):
-	        with open(subs, 'r') as myfile:
+	        with io.open(subs, "r", encoding="utf-8") as myfile:
 	                subfile = myfile.read()
 	        subtitle_generator = srt.parse(subfile)
 	        subtitles[lang] = list(subtitle_generator)
@@ -156,7 +158,7 @@ for subs in glob.glob("*.srt"):
 #then add other languages
 for subs in glob.glob("*.srt"):
 	lang = subs.split('.')[1]
-	with open(subs, 'r') as myfile:
+	with io.open(subs, "r", encoding="utf-8") as myfile:
 		subfile = myfile.read()
 	subtitle_generator = srt.parse(subfile)
 	subtitles[lang] = list(subtitle_generator)
@@ -189,7 +191,8 @@ while long(duration) > long(position):
 		elif i == next_i:
 			#requires write_subtitles = True to account for launch_state
 			if write_subtitles == True:
-				ser.write(str(subtitles[language][i].content) + "\r")
+				#ser.write(str(subtitles[language][i].content) + "\r")
+				ser.write(subtitles[language][i].content.encode("utf-8") + "\r")
 			next_i += 1
 	elif long(position) > long(end):
 		if subtitles[language][i] == subtitles[language][-1]:
