@@ -5,6 +5,8 @@ U8G2_T6963_240X64_F_8080 u8g2(U8G2_R0, 11, 5, 10, 4, 9, 3, 8, 2, /*enable=lcd_7*
 String inputString;                     //holds incoming subtitle data
 boolean stringComplete = false;         //whether the line of text is complete and ready to be printed to the display
 
+String defaultLanguageCode = "";        //first language sent
+
 String language;                        //holds incoming language data
 String languageCode;                    //current language (three characters in ISO 639-2B format e.g. "eng")
 String displayLanguage;                 //language to display on screen
@@ -50,24 +52,13 @@ void loop() {
   //switch to the correct font based on language
   if (newLanguage) {
     //Serial is sent as "{LANGUAGE[display language][3-letter language code]}" e.g. {LANGUAGEEnglisheng} or {LANGUAGEespañolspa}
-    displayLanguage = language.substring(8, language.length()-3);
+    displayLanguage = language.substring(8, language.length()-3); 
     languageCode = language.substring(language.length()-3, language.length());
-    
-    if(languageCode=="eng" || languageCode=="fre" || languageCode=="hat" || languageCode=="spa") {
-      u8g2.setFont(u8g2_font_helvR10_tf);
-    } else if(languageCode=="ara") {
-      u8g2.setFont(u8g2_font_unifont_t_arabic);
-    } else if(languageCode=="ben") {
-      //no Bengali font yet
-    } else if(languageCode=="chi") {
-      u8g2.setFont(u8g2_font_unifont_t_chinese2);
-    } else if(languageCode=="kor") {
-      //no Korean font yet
-    } else if(languageCode=="rus") {
-      u8g2.setFont(u8g2_font_unifont_t_cyrillic);
-    } else if(languageCode=="urd") {
-      //no Urdu font yet
-    } 
+    if(defaultLanguageCode == "") {
+      defaultLanguageCode = languageCode;
+    }
+
+    setFont(languageCode);
   
     //print the new language
     printCenteredText(displayLanguage);
@@ -82,6 +73,7 @@ void loop() {
     if (displayLaunchState == "blank") {
       u8g2.clear();
     } else if (displayLaunchState != "subtitles") {
+      setFont(defaultLanguageCode);
       printCenteredText(displayLaunchState);
     }
     newLaunchState = false;
@@ -122,6 +114,24 @@ void printCenteredText(String text) {
     u8g2.setCursor((240-textWidth)/2, 36);
     u8g2.print(text);
     u8g2.sendBuffer(); 
+}
+
+void setFont(String lang) {
+  if(lang=="eng" || lang=="fre" || lang=="hat" || lang=="spa") {
+    u8g2.setFont(u8g2_font_helvR10_tf);
+  } else if(lang=="ara") {
+    u8g2.setFont(u8g2_font_unifont_t_arabic);
+  } else if(lang=="ben") {
+    //no Bengali font yet
+  } else if(lang=="chi") {
+    u8g2.setFont(u8g2_font_unifont_t_chinese2);
+  } else if(lang=="kor") {
+    //no Korean font yet
+  } else if(lang=="rus") {
+    u8g2.setFont(u8g2_font_unifont_t_cyrillic);
+  } else if(lang=="urd") {
+    //no Urdu font yet
+  }
 }
 
 /*
