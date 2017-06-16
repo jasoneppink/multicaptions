@@ -120,7 +120,7 @@ GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP) #GPIO21 = pin 40
 GPIO.add_event_detect(21, GPIO.FALLING, callback=next_language, bouncetime=200)
 
 #start omxplayer
-cmd = "omxplayer --no-osd --loop %s" %(video)
+cmd = "omxplayer -o local --no-osd --loop %s" %(video)
 Popen([cmd], shell=True)
 
 #start dbus
@@ -150,7 +150,7 @@ os.chdir(subtitle_directory)
 for subs in glob.glob("*.srt"):
         lang = subs.split('.')[1]
 	if(lang == default_lang):
-	        with io.open(subs, "r", encoding="utf-8") as myfile:
+	        with io.open(subs, "r", encoding="utf-8-sig") as myfile:
 	                subfile = myfile.read()
 	        subtitle_generator = srt.parse(subfile)
 	        subtitles[lang] = list(subtitle_generator)
@@ -158,7 +158,7 @@ for subs in glob.glob("*.srt"):
 #then add other languages
 for subs in glob.glob("*.srt"):
 	lang = subs.split('.')[1]
-	with io.open(subs, "r", encoding="utf-8") as myfile:
+	with io.open(subs, "r", encoding="utf-8-sig") as myfile:
 		subfile = myfile.read()
 	subtitle_generator = srt.parse(subfile)
 	subtitles[lang] = list(subtitle_generator)
