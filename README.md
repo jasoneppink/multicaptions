@@ -15,6 +15,7 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
   * [A to B USB cable](https://www.adafruit.com/product/62) for connecting the Arduino to the Raspberry Pi
   * [jumper wires](https://www.adafruit.com/product/826) for connecting the Arduino to the LCD display
   * [10K potentiometer](https://www.adafruit.com/product/562) for setting the LCD display contrast
+  * [pushbutton](https://www.adafruit.com/product/558) for cycling through languages (optional)
 
 
 ## Setup
