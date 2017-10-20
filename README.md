@@ -33,4 +33,4 @@ extsub currently requires that SRT files for the same video have the same number
 ## Thanks
 * Big ups to @olikraus for their indispensible [u8g2 library](https://github.com/olikraus/u8g2), without which none of this would be possible.
 * Many thanks to Moe Jangda for his work getting the Raspberry Pi to talk to the LCD display.
-* High fives to Sean McIntyre (@boxysean) for polishing ("refactoring") my code.
+* High fives to [Sean McIntyre](https://github.com/boxysean) for polishing ("refactoring") my code.
