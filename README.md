@@ -1,23 +1,3 @@
-# External Subtitles for Video Installations (extsub)
-
-External Subtitles for Video Installations (extsub) plays fullscreen video (up to full HD) while simultaneously processing and displaying subtitles in one or more selectable languages on a separate graphic LCD display. It is an affordable (~$150 USD per unit), easy-to-build, easy-to-maintain, open source project using completely off-the-shelf hardware. extsub is inspired by [Figaro System's Simultext](http://www.figaro-systems.com/simultextreg.html) (known as ["Met Titles"](http://www.nytimes.com/1995/10/02/arts/reinventing-supertitles-how-the-met-did-it.html?pagewanted=all) at the NYC Metropolitan Opera).
-
-![Sample setup (English)](https://github.com/jasoneppink/extsub/blob/master/docs/sample.gif)
-
-## Hardware Requirements
-* [Raspberry Pi 2 Model B or above](https://www.adafruit.com/product/3055)
-* [Arduino Mega 2560](https://www.adafruit.com/product/191)
-* [Crystalfontz CFAG24064A graphic LCD display](https://www.crystalfontz.com/product/cfag24064attitz-240x64-display-module-graphic)
-* a monitor and HDMI cable
-* cables and components
-  * [5V 2.4 Amp power supply](https://www.adafruit.com/product/1995) for the Raspberry Pi
-  * [microSD card](https://www.adafruit.com/product/102) for the Raspberry Pi (at least 4GB)
-  * [A to B USB cable](https://www.adafruit.com/product/62) for connecting the Arduino to the Raspberry Pi
-  * [jumper wires](https://www.adafruit.com/product/826) for connecting the Arduino to the LCD display
-  * [10K potentiometer](https://www.adafruit.com/product/562) for setting the LCD display contrast
-  * [pushbutton](https://www.adafruit.com/product/558) for cycling through languages (optional)
-
-
 ## Setup
 ### Installation
 1. Upload extsub.ino to your Arduino.
@@ -133,10 +113,3 @@ If you have extsub setup to run on boot and need to stop it for any reason:
 | 18          | 2       |
 | 19          | GND     |
 | 20          | -       |
-
-## Notes
-extsub currently requires that SRT files for the same video have the same number of subtitles with the same start and end times, regardless of language, with a maximum of two lines per subtitle. (e.g. The demo video has 88 subtitles.)
-
-## Thanks
-* Big ups to @olikraus for their indispensible [u8g2 library](https://github.com/olikraus/u8g2), without which none of this would be possible.
-* Many thanks to Moe Jangda for his work getting the Raspberry Pi to talk to the LCD display.
