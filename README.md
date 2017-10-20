@@ -1,4 +1,3 @@
-## Setup
 ### Installation
 1. Upload extsub.ino to your Arduino.
 
