@@ -56,12 +56,12 @@ clues without cookie?
 Me want cookie.
 
 14
-00:00:25,680 --> 00:00:28,80
+00:00:25,680 --> 00:00:28,800
 No cookie, no guessing
 game from clues.
 
 15
-00:00:28,80 --> 00:00:29,169
+00:00:28,800 --> 00:00:29,169
 Arrivederci, Frog.
 
 16
@@ -84,21 +84,21 @@ If you guess what is in the box,
 I'll give you a cookie.
 
 20
-00:00:38,395 --> 00:00:41,80
+00:00:38,395 --> 00:00:41,800
 COOKIE MONSTER: It's a horse,
 it's a cow, it's a cotton
 
 21
-00:00:41,80 --> 00:00:43,460
+00:00:41,800 --> 00:00:43,460
 ball, it's a pogo stick,
 it's a rump roast.
 
 22
-00:00:43,460 --> 00:00:44,60
+00:00:43,460 --> 00:00:44,600
 KERMIT: No, no, no, no.
 
 23
-00:00:44,60 --> 00:00:44,870
+00:00:44,600 --> 00:00:44,870
 COOKIE MONSTER: It's a moose.
 
 24
@@ -110,27 +110,27 @@ KERMIT: No, no, no, no.
 Those are wild guesses.
 
 26
-00:00:48,170 --> 00:00:50,30
+00:00:48,170 --> 00:00:50,300
 COOKIE MONSTER: Well, me
 wild about cookies.
 
 27
-00:00:50,30 --> 00:00:51,620
+00:00:50,300 --> 00:00:51,620
 KERMIT: Yes, but you haven't
 guessed right.
 
 28
-00:00:51,620 --> 00:00:54,15
+00:00:51,620 --> 00:00:54,150
 Now, maybe if you listen
 to the clues.
 
 29
-00:00:54,15 --> 00:00:55,80
+00:00:54,150 --> 00:00:55,800
 COOKIE MONSTER: OK,
 me all ears.
 
 30
-00:00:55,80 --> 00:00:56,570
+00:00:55,800 --> 00:00:56,570
 OK, what's first clue?
 
 31
@@ -194,12 +194,12 @@ might be cookie off chance.
 KERMIT: No, it's not.
 
 45
-00:01:14,820 --> 00:01:18,20
+00:01:14,820 --> 00:01:18,200
 The color of this
 thing is orange.
 
 46
-00:01:18,20 --> 00:01:22,560
+00:01:18,200 --> 00:01:22,560
 COOKIE MONSTER: Something to eat
 that is round and orange.
 
@@ -306,11 +306,11 @@ You didn't guess it right.
 COOKIE MONSTER: Frog.
 
 70
-00:01:50,710 --> 00:01:52,9
+00:01:50,710 --> 00:01:52,900
 KERMIT: What?
 
 71
-00:01:52,9 --> 00:01:55,340
+00:01:52,900 --> 00:01:55,340
 COOKIE MONSTER: You know
 life, life not all
 
