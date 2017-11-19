@@ -1,4 +1,4 @@
-[extsub config]
+[multicaptions config]
 
 # VIDEO TITLE
 # for identification upon logging in via SSH
@@ -9,11 +9,11 @@ video_title = M002 - That Old Black Magic
 default_lang = eng
 
 # VIDEO FILENAME
-# Location of video, relative to extsub.py
+# Location of video, relative to multicaptions.py
 video_filename = media/M002.mov
 
 # SUBTITLE DIRECTORY
-# Location of subtitle file directory, relative to extsub.py. Don't add slashes.
+# Location of subtitle file directory, relative to multicaptions.py. Don't add slashes.
 subtitle_directory = media
 
 # DEFAULT DISPLAY STATE
@@ -30,11 +30,11 @@ launch_state = subtitles
 subtitle_duration = 1
 
 # SUBTITLE IMAGE FILE DIRECTORY
-# Location of subtitle image files, relative to extsub.py. Don't add slashes.
+# Location of subtitle image files, relative to multicaptions.py. Don't add slashes.
 subtitle_image_directory = media/images
 
 # GENERATE SUBTITLE IMAGE FILES?
-# extsub automatically generates images as BMPs from the SRT files and places
+# multicaptions automatically generates images as BMPs from the SRT files and places
 # them in subtitle_image_directory. If you would rather use BMPs that you
 # manually produce yourself, change this to "false".
 generate_sub_images = true
