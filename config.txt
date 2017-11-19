@@ -1,4 +1,4 @@
-[extsub config]
+[multicaptions config]
 
 # VIDEO TITLE
 # for identification upon logging in via SSH
@@ -9,11 +9,11 @@ video_title = Sesame Street: Kermit And Cookie Monster And The Mystery Box
 default_lang = eng
 
 # VIDEO FILENAME
-# Location of video, relative to extsub.py
+# Location of video, relative to multicaptions.py
 video_filename = media/test.mp4
 
 # SUBTITLE DIRECTORY
-# Location of subtitle file directory, relative to extsub.py. Don't add slashes
+# Location of subtitle file directory, relative to multicaptions.py. Don't add slashes
 subtitle_directory = media
 
 # DEFAULT DISPLAY STATE
