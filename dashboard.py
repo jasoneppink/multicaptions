@@ -8,7 +8,7 @@ abs_path = os.path.dirname(os.path.abspath(__file__)) + "/"
 #read from configuration file
 config = ConfigParser.ConfigParser()
 config.readfp(open(abs_path + 'config.txt', 'r'))
-video_title = config.get('extsub config', 'video_title')
+video_title = config.get('multicaptions config', 'video_title')
 
 def get_process_time(output):
 	# based on script by Daniel G
