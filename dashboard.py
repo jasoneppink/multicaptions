@@ -8,7 +8,7 @@ abs_path = os.path.dirname(os.path.abspath(__file__)) + "/"
 #read from configuration file
 config = ConfigParser.ConfigParser()
 config.readfp(open(abs_path + 'config.txt', 'r'))
-video_title = config.get('extsub config', 'video_title')
+video_title = config.get('multicaptions config', 'video_title')
 
 def get_process_time(output):
 	# based on script by Daniel G
@@ -91,11 +91,6 @@ def get_num_plays():
 def update_dashboard():
 	with open('/tmp/motd.tmp', 'w') as dashboard_text:
 		dashboard_text.truncate()
-		#dashboard_text.write('           _             _     \n')
-		#dashboard_text.write('  _____  _| |_ ___ _   _| |__  \n')
-		#dashboard_text.write(' / _ \\ \\/ / __/ __| | | | \'_ \\ \n')
-		#dashboard_text.write('|  __/>  <| |_\\__ \\ |_| | |_) |\n')
-		#dashboard_text.write(' \\___/_/\\_\\\\__|___/\\__,_|_.__/ \n')
 		dashboard_text.write('\n')
 		dashboard_text.write('Playing: ' + video_title + '\n')
     		dashboard_text.write('Launched: ' + get_process_time("start") + '\n')
