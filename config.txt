@@ -2,7 +2,7 @@
 
 # VIDEO TITLE
 # for identification upon logging in via SSH
-video_title = Sesame Street: Kermit And Cookie Monster And The Mystery Box
+video_title = M002 - That Old Black Magic
 
 # DEFAULT LANGUAGE
 # as 3-character ISO 639-2B
@@ -10,20 +10,31 @@ default_lang = eng
 
 # VIDEO FILENAME
 # Location of video, relative to extsub.py
-video_filename = media/test.mp4
+video_filename = media/M002.mov
 
 # SUBTITLE DIRECTORY
-# Location of subtitle file directory, relative to extsub.py. Don't add slashes
+# Location of subtitle file directory, relative to extsub.py. Don't add slashes.
 subtitle_directory = media
 
 # DEFAULT DISPLAY STATE
 # default state of the LCD display on launch
 # options: "blank" or "subtitles", any other text will be displayed verbatim
 # on launch (e.g. "Press Button for Subtitles")
-launch_state = Press Button for Captions
+#launch_state = Press Button for Captions
+launch_state = subtitles
 
 # SUBTITLE DURATION BEFORE RETURN TO DEFAULT
 # If the default state is "blank" or custom text, how long do the subtitles
 # display before returning to default state?
 # options: 1: to the end, 2: once around, 3: once around to the end
 subtitle_duration = 1
+
+# SUBTITLE IMAGE FILE DIRECTORY
+# Location of subtitle image files, relative to extsub.py. Don't add slashes.
+subtitle_image_directory = media/images
+
+# GENERATE SUBTITLE IMAGE FILES?
+# extsub automatically generates images as BMPs from the SRT files and places
+# them in subtitle_image_directory. If you would rather use BMPs that you
+# manually produce yourself, change this to "false".
+generate_sub_images = true

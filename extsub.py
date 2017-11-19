@@ -12,15 +12,14 @@ import datetime
 import getpass
 import dbus
 from langdict import langdict #Language Dictionary
-import glob, os
+import glob, os, errno
 import RPi.GPIO as GPIO
 import collections
-import serial as s
-import serial.tools.list_ports
 import ConfigParser
 from dashboard import update_dashboard
 import pickle
 import io
+from bmp2hex import bmp2hex
 
 #function converts timecode to milliseconds
 def tc_to_ms(s):
@@ -34,12 +33,12 @@ def tc_to_ms(s):
 #omxplayer's timecode resolution is much higher than SRT files so this chops off the last 3 digits
 def chop_digits(s):
         if long(s) > 999:
-                return s[:-3]
+		return s[:-3]
         else:
-                return "0"
+		return "0"
 
 def next_language(channel):
-	global subtitles, language, next_i, write_subtitles, position, sub_start_position, subtitle_duration, played_through_once
+	global abs_path, subtitles, language, next_i, write_subtitles, position, sub_start_position, subtitle_duration, played_through_once, launch_state
 	if(subtitle_duration == "2"):
 		sub_start_position = position
 		played_through_once = False
@@ -51,24 +50,38 @@ def next_language(channel):
 					language = subtitles.items()[0][0]
 					#revert to default
 					if(launch_state != "subtitles"):
-						ser.write("{DEFAULT" + launch_state + "}")
+						write_to_display("info", language, launch_state)
+						sys.stdout.write("launch stat: " + launch_state + "\n")
 						write_subtitles = False
+					else:
+						write_to_display("info", language, langdict[language].decode("utf-8-sig"))
 				else:
 					language = subtitles.items()[j+1][0]
-					ser.write("{LANGUAGE" + langdict[language] + language + "}")
+					write_to_display("info", language, langdict[language].decode("utf-8-sig"))
 				#for debugging language select button, print out date/time and language code
 				sys.stdout.write(time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime()) + ": " + language + "\n")
 				break
 			else:
 				#keep language the same after first button press
-				ser.write("{LANGUAGE" + langdict[language] + language + "}")
+				write_to_display("info", language, langdict[language].decode("utf-8-sig"))
 				write_subtitles = True
 				break
 		else:
 
 			j += 1
 
+def write_to_display(type, lang, text_to_print, count=0):
+	global subtitle_image_directory
+	if type == "info":
+		sys.stdout.write(type + " " + lang + " " + text_to_print + "\n")
+	if type == "sub":
+#		Popen([abs_path + "../Noritake_VFD_GU3000/test/test", type, language, text_to_print])
+#		language + str(count) + ".bmp"
+#		sys.stdout.write(lang + str(count) + ".bmp\n")
+#		temp = bmp2hex(subtitle_image_directory + "/" + lang + "/" + str(count) + ".bmp")
+		Popen([abs_path + "../Noritake_VFD_GU3000/imagetest/imagetest", bmp2hex(subtitle_image_directory + "/" + lang + "/" + str(count) + ".bmp")])
 def main():
+	global abs_path, subtitles, sub, language, next_i, write_subtitles, position, sub_start_position, subtitle_duration, played_through_once, launch_state, subtitle_directory, subtitle_image_directory
 	#get absolute path of this script
 	abs_path = os.path.dirname(os.path.abspath(__file__)) + "/"
 
@@ -79,6 +92,8 @@ def main():
 	launch_state = config.get('extsub config', 'launch_state')
 	video = abs_path + config.get('extsub config', 'video_filename')
 	subtitle_directory = abs_path + config.get('extsub config', 'subtitle_directory')
+	subtitle_image_directory = abs_path + config.get('extsub config', 'subtitle_image_directory')
+	generate_sub_images = config.get('extsub config', 'generate_sub_images')
 
 	#initiate assorted variables for tracking subtitle duration
 	subtitle_duration = config.get('extsub config', 'subtitle_duration')
@@ -90,31 +105,18 @@ def main():
 	f.write("0")
 	f.close()
 
-	#set up serial connection to Arduino
-	ports = list(serial.tools.list_ports.comports())
-	for p in ports:
-	  if "ACM" in str(p):
-	    arduino_port = str(p)[:12]
-	ser=s.Serial(arduino_port, .9600)
-	time.sleep(3)
-
 	#set language, first from command line, otherwise from config.txt
 	if(len(sys.argv) > 1):
 		language = sys.argv[1]
 	else:
 		language = default_lang
 
-	#send language to Arduino
-	ser.write("{LANGUAGE" + langdict[language] + language + "}")
-
-	#send default display state to Arduino
-	ser.write("{DEFAULT" + launch_state + "}")
-
 	#setup default display info
 	if(launch_state == "subtitles"):
 		write_subtitles = True
 	else:
 		write_subtitles = False
+		write_to_display("info", language, launch_state)
 
 	#setup button
 	GPIO.setmode(GPIO.BCM)
@@ -154,8 +156,17 @@ def main():
 		if(lang == default_lang):
 		        with io.open(subs, "r", encoding="utf-8-sig") as myfile:
 		                subfile = myfile.read()
+			#sys.stdout.write(str(srt.parse(subfile)))
 		        subtitle_generator = srt.parse(subfile)
 		        subtitles[lang] = list(subtitle_generator)
+			if not os.path.exists(subtitle_image_directory + "/" + lang):
+				os.makedirs(subtitle_image_directory + "/" + lang)
+			for count, eachsub in enumerate(subtitles[lang]):
+				#sys.stdout.write(eachsub.content)
+				sub = eachsub.content.replace("'", r"\'").encode("utf-8-sig")
+				cmd = "convert -size 256x64 -fill black -font unifont.tff -pointsize 12 -colors 2 pango:\"" + sub + "\" " + subtitle_image_directory + "/" + lang + "/" + str(count) + ".bmp"
+				Popen([cmd], shell=True)
+				#sys.stdout.write(cmd + "\n")
 
 	#then add other languages
 	for subs in glob.glob("*.srt"):
@@ -182,10 +193,10 @@ def main():
 		position = chop_digits(str(dbusIfaceProp.Position()))
 
 		#return to default if subtitle_duration 2 cases are met
-		if subtitle_duration == "2" and write_subtitles == True and played_through_once == True:
+		if subtitle_duration == "2" and write_subtitles == True and played_through_once == True and launch_state != "subtitles":
 			if long(position) > long(sub_start_position):
 				write_subtitles = False
-				ser.write("{DEFAULT" + launch_state + "}")
+				write_to_display("info", language, launch_state)
 
 		if long(position) > long(start) and long(position) <= long(end):
 			if i > next_i:
@@ -193,7 +204,8 @@ def main():
 			elif i == next_i:
 				#requires write_subtitles = True to account for launch_state
 				if write_subtitles == True:
-					ser.write(subtitles[language][i].content.encode("utf-8") + "\r")
+					write_to_display("sub", language, subtitles[language][i].content, i)
+					#sys.stdout.write(subtitles[language][i].content + "\n")
 				next_i += 1
 		elif long(position) > long(end):
 			if subtitles[language][i] == subtitles[language][-1]:
@@ -201,11 +213,12 @@ def main():
 				next_i = 0
 				if launch_state != "subtitles" and write_subtitles == True:
 					if(subtitle_duration == "1" or (subtitle_duration == "3" and played_through_once == True)):
-						#return dipslay to default state
+						#return display to default state
 						write_subtitles = False
 						played_through_once = False
 						language = default_lang
-						ser.write("{DEFAULT" + launch_state + "}")
+						write_to_display("info", language, launch_state)
+						#ser.write("{DEFAULT" + launch_state + "}")
 					elif(subtitle_duration == "3" and played_through_once == False):
 						played_through_once = True
 					elif(subtitle_duration == "2"):
