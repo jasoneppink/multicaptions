@@ -1,6 +1,6 @@
-# External Subtitles for Video Installations (extsub)
+# Multicaptions - External Captions for Media Installations
 
-External Subtitles for Video Installations (extsub) plays fullscreen video (up to full HD) while simultaneously processing and displaying subtitles in one or more selectable languages on a separate graphic LCD or VFD display. It is an affordable, easy-to-build, easy-to-maintain, open source project using completely off-the-shelf hardware. extsub is inspired by [Figaro System's Simultext](http://www.figaro-systems.com/simultextreg.html) (known as ["Met Titles"](http://www.nytimes.com/1995/10/02/arts/reinventing-supertitles-how-the-met-did-it.html?pagewanted=all) at the NYC Metropolitan Opera).
+Multicaptions plays fullscreen video (up to full HD) while simultaneously processing and displaying subtitles in one or more selectable languages on a separate graphic LCD or VFD display. It is an affordable, easy-to-build, easy-to-maintain, open source project using completely off-the-shelf hardware. extsub is inspired by [Figaro System's Simultext](http://www.figaro-systems.com/simultextreg.html) (known as ["Met Titles"](http://www.nytimes.com/1995/10/02/arts/reinventing-supertitles-how-the-met-did-it.html?pagewanted=all) at the NYC Metropolitan Opera).
 
 ![Sample setup (English)](https://github.com/jasoneppink/extsub/blob/master/docs/sample.gif)
 
@@ -25,10 +25,10 @@ External Subtitles for Video Installations (extsub) plays fullscreen video (up t
 
 
 ## Setup and Installation
-See [LCD](https://github.com/jasoneppink/extsub/tree/LCD) or [VFD](https://github.com/jasoneppink/extsub/tree/VFD) branches for detailed instructions.
+See [LCD](https://github.com/jasoneppink/multicaptions/tree/LCD) or [VFD](https://github.com/jasoneppink/multicaptions/tree/VFD) branches for detailed instructions.
 
 ## Notes
-extsub currently requires that SRT files for the same video have the same number of subtitles with the same start and end times, regardless of language, with a maximum of two lines per subtitle. (e.g. The demo video has 88 subtitles.)
+Multicaptions currently requires that SRT files for the same video have the same number of subtitles with the same start and end times, regardless of language, with a maximum of two lines per subtitle. (e.g. The demo video has 88 subtitles.)
 
 ## Thanks
 * Big ups to @olikraus for their indispensible [u8g2 library](https://github.com/olikraus/u8g2), without which none of this would be possible.
