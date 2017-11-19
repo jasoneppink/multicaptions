@@ -75,11 +75,11 @@ def write_to_display(type, lang, text_to_print, count=0):
 	if type == "info":
 		sys.stdout.write(type + " " + lang + " " + text_to_print + "\n")
 	if type == "sub":
-#		Popen([abs_path + "../Noritake_VFD_GU3000/test/test", type, language, text_to_print])
+#		Popen([abs_path + "/Noritake_VFD_GU3000/test/test", type, language, text_to_print])
 #		language + str(count) + ".bmp"
 #		sys.stdout.write(lang + str(count) + ".bmp\n")
 #		temp = bmp2hex(subtitle_image_directory + "/" + lang + "/" + str(count) + ".bmp")
-		Popen([abs_path + "../Noritake_VFD_GU3000/imagetest/imagetest", bmp2hex(subtitle_image_directory + "/" + lang + "/" + str(count) + ".bmp")])
+		Popen([abs_path + "/Noritake_VFD_GU3000/imagetest/imagetest", bmp2hex(subtitle_image_directory + "/" + lang + "/" + str(count) + ".bmp")])
 def main():
 	global abs_path, subtitles, sub, language, next_i, write_subtitles, position, sub_start_position, subtitle_duration, played_through_once, launch_state, subtitle_directory, subtitle_image_directory
 	#get absolute path of this script
