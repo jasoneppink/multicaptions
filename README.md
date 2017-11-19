@@ -1,5 +1,5 @@
 ### Installation
-1. Upload extsub.ino to your Arduino.
+1. Upload multicaptions.ino to your Arduino.
 
 2. Connect your devices as pictured in the diagram below.
 
@@ -29,13 +29,13 @@
 6. Clone the repository:
 
   ```
-  git clone https://github.com/jasoneppink/extsub
+  git clone https://github.com/jasoneppink/multicaptions
   ```
   
-7. Change to the extsub directory and update config.txt with your details:
+7. Change to the multicaptions directory and update config.txt with your details:
 
   ```
-  cd extsub
+  cd multicaptions
   nano config.txt
   ```
   (Press <kbd>ctrl</kbd>+<kbd>x</kbd>, <kbd>y</kbd>, then <kbd>enter</kbd> to exit and save.)
@@ -43,11 +43,11 @@
 8. Test that your video and subtitles work:
 
   ```
-  python extsub.py
+  python multicaptions.py
   ```
 
 ### Bootstrapping
-If everything is working, press <kbd>ctrl</kbd>+<kbd>c</kbd> to kill extsub.py, then follow these steps to run extsub at boot.
+If everything is working, press <kbd>ctrl</kbd>+<kbd>c</kbd> to kill multicaptions.py, then follow these steps to run multicaptions at boot.
 
 1. Make startup.sh executable:
 
@@ -60,10 +60,10 @@ If everything is working, press <kbd>ctrl</kbd>+<kbd>c</kbd> to kill extsub.py, 
   ```
   sudo nano /etc/rc.local
   ```
-and add this line so extsub starts at boot (assuming user and home directory are "pi"):
+and add this line so multicaptions starts at boot (assuming user and home directory are "pi"):
 
   ```
-  sudo -u pi /home/pi/extsub/startup.sh
+  sudo -u pi /home/pi/multicaptions/startup.sh
   ```
 
 3. Reboot! Video will begin to play automatically.
@@ -72,8 +72,8 @@ and add this line so extsub starts at boot (assuming user and home directory are
   sudo reboot
   ```
 
-### Killing extsub
-If you have extsub setup to run on boot and need to stop it for any reason:
+### Killing multicaptions
+If you have multicaptions setup to run on boot and need to stop it for any reason:
 
 1. Connect the Raspberry Pi to a network, reboot it, take note of the IP address, and log in via SSH (assuming user is "pi"):
   ```
@@ -88,7 +88,7 @@ If you have extsub setup to run on boot and need to stop it for any reason:
 
 ## Wiring
 
-![Wiring](https://github.com/jasoneppink/extsub/blob/master/docs/wiring.jpg)
+![Wiring](https://github.com/jasoneppink/multicaptions/blob/master/docs/wiring.jpg)
 
 | LCD Display | Arduino |
 | ----------- | ------- |
