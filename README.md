@@ -1,8 +1,8 @@
 # Multicaptions: External Captions for Media Installations
 
-Multicaptions plays fullscreen video (up to full HD) while simultaneously processing and displaying subtitles in one or more selectable languages on a separate graphic LCD or VFD display. It is an affordable, easy-to-build, easy-to-maintain, open source project using completely off-the-shelf hardware. extsub is inspired by [Figaro System's Simultext](http://www.figaro-systems.com/simultextreg.html) (known as ["Met Titles"](http://www.nytimes.com/1995/10/02/arts/reinventing-supertitles-how-the-met-did-it.html?pagewanted=all) at the NYC Metropolitan Opera).
+Multicaptions plays fullscreen video (up to full HD) while simultaneously processing and displaying subtitles in one or more selectable languages on a separate graphic LCD or VFD display. It is an affordable, easy-to-build, easy-to-maintain, open source project using completely off-the-shelf hardware. Multicaptions is inspired by [Figaro System's Simultext](http://www.figaro-systems.com/simultextreg.html) (known as ["Met Titles"](http://www.nytimes.com/1995/10/02/arts/reinventing-supertitles-how-the-met-did-it.html?pagewanted=all) at the NYC Metropolitan Opera).
 
-![Sample setup (English)](https://github.com/jasoneppink/extsub/blob/master/docs/sample.gif)
+![Sample setup (English)](https://github.com/jasoneppink/multicaptions/blob/master/docs/sample.gif)
 
 ## Hardware Requirements
 * [Raspberry Pi 2 Model B or above](https://www.adafruit.com/product/3055)
