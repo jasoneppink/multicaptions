@@ -20,5 +20,5 @@ sudo sh -c "TERM=linux setterm -foreground black >/dev/tty0"
 #start video playback
 while true
 do
-	/usr/bin/python ${BASH_SOURCE%/*}/extsub.py
+	/usr/bin/python ${BASH_SOURCE%/*}/multicaptions.py
 done
