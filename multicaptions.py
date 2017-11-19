@@ -88,15 +88,15 @@ def main():
 	#read from configuration file
 	config = ConfigParser.ConfigParser()
 	config.readfp(open(abs_path + 'config.txt', 'r'))
-	default_lang = config.get('extsub config', 'default_lang')
-	launch_state = config.get('extsub config', 'launch_state')
-	video = abs_path + config.get('extsub config', 'video_filename')
-	subtitle_directory = abs_path + config.get('extsub config', 'subtitle_directory')
-	subtitle_image_directory = abs_path + config.get('extsub config', 'subtitle_image_directory')
-	generate_sub_images = config.get('extsub config', 'generate_sub_images')
+	default_lang = config.get('multicaptions config', 'default_lang')
+	launch_state = config.get('multicaptions config', 'launch_state')
+	video = abs_path + config.get('multicaptions config', 'video_filename')
+	subtitle_directory = abs_path + config.get('multicaptions config', 'subtitle_directory')
+	subtitle_image_directory = abs_path + config.get('multicaptions config', 'subtitle_image_directory')
+	generate_sub_images = config.get('multicaptions config', 'generate_sub_images')
 
 	#initiate assorted variables for tracking subtitle duration
-	subtitle_duration = config.get('extsub config', 'subtitle_duration')
+	subtitle_duration = config.get('multicaptions config', 'subtitle_duration')
 	played_through_once = False
 	sub_start_position = ""
 
