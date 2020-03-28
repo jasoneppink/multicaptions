@@ -1,26 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import re
-import subprocess
+import collections, ConfigParser, datetime, dbus, getpass, glob, io, pickle, os, re, subprocess, srt, sys, time
 from subprocess import Popen
-import srt
-import sys
 from pprint import pprint
-import time
-import datetime
-import getpass
-import dbus
 from langdict import langdict #Language Dictionary
-import glob, os
 import RPi.GPIO as GPIO
-import collections
 import serial as s
 import serial.tools.list_ports
-import ConfigParser
 from dashboard import update_dashboard
-import pickle
-import io
 
 #function converts timecode to milliseconds
 def tc_to_ms(s):
@@ -39,7 +27,7 @@ def chop_digits(s):
                 return "0"
 
 def next_language(channel):
-	global subtitles, language, next_i, write_subtitles, position, sub_start_position, subtitle_duration, played_through_once
+	global subtitles, language, next_i, write_subtitles, position, sub_start_position, subtitle_duration, played_through_once, ser, launch_state
 	if(subtitle_duration == "2"):
 		sub_start_position = position
 		played_through_once = False
@@ -65,13 +53,14 @@ def next_language(channel):
 				write_subtitles = True
 				break
 		else:
-
 			j += 1
+
 
 def main():
 	#get absolute path of this script
 	abs_path = os.path.dirname(os.path.abspath(__file__)) + "/"
-
+	global subtitles, language, next_i, write_subtitles, position, sub_start_position, subtitle_duration, played_through_once, ser, launch_state
+	
 	#read from configuration file
 	config = ConfigParser.ConfigParser()
 	config.readfp(open(abs_path + 'config.txt', 'r'))
@@ -116,6 +105,8 @@ def main():
 	else:
 		write_subtitles = False
 
+
+
 	#setup button
 	GPIO.setmode(GPIO.BCM)
 	GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP) #GPIO21 = pin 40
@@ -150,12 +141,12 @@ def main():
 
 	#first add default language
 	for subs in glob.glob("*.srt"):
-	        lang = subs.split('.')[1]
+		lang = subs.split('.')[1]
 		if(lang == default_lang):
-		        with io.open(subs, "r", encoding="utf-8-sig") as myfile:
-		                subfile = myfile.read()
-		        subtitle_generator = srt.parse(subfile)
-		        subtitles[lang] = list(subtitle_generator)
+			with io.open(subs, "r", encoding="utf-8-sig") as myfile:
+				subfile = myfile.read()
+			subtitle_generator = srt.parse(subfile)
+			subtitles[lang] = list(subtitle_generator)
 
 	#then add other languages
 	for subs in glob.glob("*.srt"):
@@ -222,7 +213,7 @@ def main():
 				i += 1
 		elif long(position) == 0:
 			i = 0
-			next_i = 0
+	next_i = 0
 
 if __name__ == '__main__':
 	main()
