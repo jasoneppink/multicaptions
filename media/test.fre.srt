@@ -1,0 +1,414 @@
+1
+00:00:00,000 --> 00:00:00,740
+
+
+2
+00:00:00,740 --> 00:00:01,270
+ KERMIT: Salut ho. 
+
+3
+00:00:01,270 --> 00:00:05,310
+Kermit la grenouille ici,
+ce qui est une boîte mystère. 
+
+4
+00:00:05,310 --> 00:00:08,890
+Vous voyez, si quelqu'un peut
+le deviner à partir des indices
+que je donne ce qui est 
+
+5
+00:00:08,890 --> 00:00:12,140
+dans cette boîte, alors ils
+peuvent garder ce qui est dans
+la boîte. 
+
+6
+00:00:12,140 --> 00:00:13,400
+COOKIE MONSTER: Est-ce cookie? 
+
+7
+00:00:13,400 --> 00:00:14,845
+KERMIT: Non, ce n'est pas
+un cookie. 
+
+8
+00:00:14,845 --> 00:00:15,810
+COOKIE MONSTER: Bye bye. 
+
+9
+00:00:15,810 --> 00:00:17,330
+KERMIT: Mais attendez une
+seconde, Cookie Monster. 
+
+10
+00:00:17,330 --> 00:00:17,810
+COOKIE MONSTER: Quoi? 
+
+11
+00:00:17,810 --> 00:00:19,830
+KERMIT: Il y a des indices. 
+
+12
+00:00:19,830 --> 00:00:23,610
+COOKIE MONSTER: Qui se soucient
+des indices sans cookie? 
+
+13
+00:00:23,610 --> 00:00:25,680
+Me veux cookie. 
+
+14
+00:00:25,680 --> 00:00:28,800
+Aucun cookie, aucun jeu de
+devinettes à partir d'indices. 
+
+15
+00:00:28,800 --> 00:00:29,169
+Arrivederci, grenouille. 
+
+16
+00:00:29,170 --> 00:00:31,520
+KERMIT: Mais attendez une
+seconde, Cookie Monster. 
+
+17
+00:00:31,520 --> 00:00:31,599
+Reviens ici. 
+
+18
+00:00:31,600 --> 00:00:33,980
+Vous voyez, je vais vous dire
+ce que je vais faire. 
+
+19
+00:00:33,980 --> 00:00:38,394
+Si vous devinez ce qui est
+dans la boîte, je vais vous
+donner un cookie. 
+
+20
+00:00:38,395 --> 00:00:41,800
+COOKIE MONSTER: Il est un
+cheval, il est une vache,
+il est un coton 
+
+21
+00:00:41,800 --> 00:00:43,460
+balle, il est un bâton de pogo,
+il est un rôti de croupe. 
+
+22
+00:00:43,460 --> 00:00:44,600
+KERMIT: Non, non, non, non. 
+
+23
+00:00:44,600 --> 00:00:44,870
+COOKIE MONSTER: Il est
+un orignal. 
+
+24
+00:00:44,870 --> 00:00:46,250
+KERMIT: Non, non, non, non. 
+
+25
+00:00:46,250 --> 00:00:48,170
+Ce sont des suppositions
+sauvages. 
+
+26
+00:00:48,170 --> 00:00:50,300
+COOKIE MONSTER: Eh bien, moi
+sauvage au sujet des cookies. 
+
+27
+00:00:50,300 --> 00:00:51,620
+KERMIT: Oui, mais vous avez
+pas deviné juste. 
+
+28
+00:00:51,620 --> 00:00:54,150
+Maintenant, peut-être si vous
+écoutez les indices. 
+
+29
+00:00:54,150 --> 00:00:55,800
+COOKIE MONSTER: OK, moi
+toutes les oreilles. 
+
+30
+00:00:55,800 --> 00:00:56,570
+OK, ce qui est le
+premier indice? 
+
+31
+00:00:56,570 --> 00:01:00,485
+KERMIT: OK, le premier indice
+est qu'il est quelque chose
+à manger. 
+
+32
+00:01:00,485 --> 00:01:00,990
+COOKIE MONSTER: Il est
+un cookie. 
+
+33
+00:01:00,990 --> 00:01:02,590
+KERMIT: Non, ce n'est
+pas un cookie. 
+
+34
+00:01:02,590 --> 00:01:03,422
+COOKIE MONSTER: Pas un cookie. 
+
+35
+00:01:03,422 --> 00:01:04,709
+Donnez-moi deuxième indice. 
+
+36
+00:01:04,709 --> 00:01:07,720
+KERMIT: Le deuxième indice est
+qu'il est quelque chose de rond. 
+
+37
+00:01:07,720 --> 00:01:08,490
+COOKIE MONSTER: Un cookie. 
+
+38
+00:01:08,490 --> 00:01:09,804
+KERMIT: Non, ce n'est
+pas un cookie. 
+
+39
+00:01:09,805 --> 00:01:10,780
+COOKIE MONSTER: Pas un cookie. 
+
+40
+00:01:10,780 --> 00:01:11,260
+KERMIT: Hm-mm. 
+
+41
+00:01:11,260 --> 00:01:11,930
+COOKIE MONSTER: Désolé,
+troisième indice. 
+
+42
+00:01:11,930 --> 00:01:12,750
+KERMIT: Troisième indice. 
+
+43
+00:01:12,750 --> 00:01:14,270
+COOKIE MONSTER: Juste pensé
+qu'il pourrait être cookie
+hors hasard. 
+
+44
+00:01:14,270 --> 00:01:14,820
+KERMIT: Non, ce n'est pas. 
+
+45
+00:01:14,820 --> 00:01:18,200
+La couleur de cette chose
+est orange. 
+
+46
+00:01:18,200 --> 00:01:22,560
+COOKIE MONSTER: Quelque chose
+à manger qui est rond et orange. 
+
+47
+00:01:22,560 --> 00:01:23,596
+Il est un cookie. 
+
+48
+00:01:23,596 --> 00:01:24,730
+KERMIT: (Yelling) Non, ce
+n'est pas un cookie! 
+
+49
+00:01:24,730 --> 00:01:26,330
+COOKIE MONSTER: Juste pensé
+une dernière chance, vous savez? 
+
+50
+00:01:26,330 --> 00:01:27,700
+KERMIT: Non, ce n'est
+pas un cookie. 
+
+51
+00:01:27,700 --> 00:01:30,590
+COOKIE MONSTER: OK, euh, me
+faire abandonner. 
+
+52
+00:01:30,590 --> 00:01:30,920
+KERMIT: Quoi? 
+
+53
+00:01:30,920 --> 00:01:32,500
+Comment pouvez-vous abandonner? 
+
+54
+00:01:32,500 --> 00:01:34,310
+Il est quelque chose à manger
+qui est rond et orange. 
+
+55
+00:01:34,310 --> 00:01:34,860
+Il est une orange. 
+
+56
+00:01:34,860 --> 00:01:35,970
+Il est une orange! 
+
+57
+00:01:35,970 --> 00:01:37,440
+COOKIE MONSTER: Moi comme ce
+quatrième indice. 
+
+58
+00:01:37,440 --> 00:01:38,950
+Est-ce une orange? 
+
+59
+00:01:38,950 --> 00:01:40,590
+KERMIT: (Crier) Bien sûr,
+il est une orange. 
+
+60
+00:01:40,590 --> 00:01:41,450
+Je viens de vous dire qu'il
+était une orange. 
+
+61
+00:01:41,450 --> 00:01:42,550
+COOKIE MONSTER:
+Me suppose droite. 
+
+62
+00:01:42,550 --> 00:01:43,170
+Me reçois cookie. 
+
+63
+00:01:43,170 --> 00:01:43,700
+Donnez-moi cookie. 
+
+64
+00:01:43,700 --> 00:01:45,130
+KERMIT: Non, vous ne recevez
+un cookie. 
+
+65
+00:01:45,130 --> 00:01:45,560
+COOKIE MONSTER: Pourquoi? 
+
+66
+00:01:45,560 --> 00:01:46,700
+KERMIT: Je vous ai dit ce
+qu'elle était. 
+
+67
+00:01:46,700 --> 00:01:47,630
+Je vous ai dit qu'il était
+une orange. 
+
+68
+00:01:47,630 --> 00:01:50,429
+Vous ne l'avez pas
+deviné juste. 
+
+69
+00:01:50,430 --> 00:01:50,710
+COOKIE MONSTER: Frog. 
+
+70
+00:01:50,710 --> 00:01:52,900
+KERMIT: Quoi? 
+
+71
+00:01:52,900 --> 00:01:55,340
+COOKIE MONSTER: Vous savez
+la vie, la vie pas tout 
+
+72
+00:01:55,340 --> 00:01:56,780
+jeux de devinettes,
+grenouille. 
+
+73
+00:01:56,780 --> 00:02:00,570
+Parfois, il faut se soucier
+des amis, en particulier 
+
+74
+00:02:00,570 --> 00:02:03,699
+amis qui aiment les cookies,
+les amis qui aiment les cookies afin 
+
+75
+00:02:03,700 --> 00:02:08,240
+bien qu'ils jouent des jeux
+de devinettes stupides parce
+que peut-être, peut-être 
+
+76
+00:02:08,240 --> 00:02:13,682
+juste peut-être une grenouille,
+une grenouille très beau qui
+a biscuit 
+
+77
+00:02:13,682 --> 00:02:18,899
+va donner le meilleur, le
+meilleur ami qui ne peut
+vivre sans 
+
+78
+00:02:18,900 --> 00:02:24,160
+les cookies, donnent que le
+meilleur ami d'un cookie. 
+
+79
+00:02:24,160 --> 00:02:27,290
+Mais si l'amitié signifie
+nothing-- 
+
+80
+00:02:27,290 --> 00:02:28,262
+KERMIT: OK. 
+
+81
+00:02:28,262 --> 00:02:30,210
+OK OK. 
+
+82
+00:02:30,210 --> 00:02:32,810
+Voici votre cookie. 
+
+83
+00:02:32,810 --> 00:02:35,286
+COOKIE MONSTER:
+Un biscuit maigre? 
+
+84
+00:02:35,286 --> 00:02:38,145
+Discours comme ça mérite au
+moins cinq cookies. 
+
+85
+00:02:38,145 --> 00:02:39,480
+KERMIT: Je n'y avait qu'un
+seul cookie. 
+
+86
+00:02:39,480 --> 00:02:40,260
+COOKIE MONSTER: OK. 
+
+87
+00:02:40,260 --> 00:02:41,850
+Dans ce cas, me contenterais. 
+
+88
+00:02:41,850 --> 00:02:44,906
+[EATS COOKIE bruyamment] 
+
