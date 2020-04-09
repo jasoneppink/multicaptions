@@ -1,12 +1,12 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
-import os, sys, datetime, time, subprocess, ConfigParser
+import os, sys, datetime, time, subprocess, configparser
 
 #get absolute path of this script (necessary because it's being called, indirectly, from rc.local)
 abs_path = os.path.dirname(os.path.abspath(__file__)) + "/"
 
 #read from configuration file
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.readfp(open(abs_path + 'config.txt', 'r'))
 video_title = config.get('multicaptions config', 'video_title')
 
@@ -30,7 +30,7 @@ def get_process_time(output):
 			except IndexError:
 				pass # ignore it
 		else:
-			print "Process PID", pid, "doesn't seem to exist!"
+			print("Process PID " + pid + " doesn't seem to exist!")
 			sys.exit(0)
 		pidInfo = [result.split()[1] for result in results
 			if result.split()[0] == pid][0]
@@ -98,7 +98,7 @@ def update_dashboard():
 		#dashboard_text.write(' \\___/_/\\_\\\\__|___/\\__,_|_.__/ \n')
 		dashboard_text.write('\n')
 		dashboard_text.write('Playing: ' + video_title + '\n')
-    		dashboard_text.write('Launched: ' + get_process_time("start") + '\n')
+		dashboard_text.write('Launched: ' + get_process_time("start") + '\n')
 		dashboard_text.write('Playing for: ' + get_process_time("duration") + '\n')
 		dashboard_text.write('Looped: ' + get_num_plays() + ' times\n\n')
 		
